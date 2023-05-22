@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; // yeah ill fix this later 
 
 const Home = () => {
   return (
@@ -27,7 +28,7 @@ const Home = () => {
             href="https://curius.app/evan-lin"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 md:mb-0"
+            className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-white md:mb-0"
           >
             Readings
           </a>
@@ -35,7 +36,7 @@ const Home = () => {
             href="https://twitter.com/evannlinn"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700  md:mb-0"
+            className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-white md:mb-0"
           >
             Twitter
           </a>
@@ -43,7 +44,7 @@ const Home = () => {
             href="https://github.com/eevaain"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700  md:mb-0"
+            className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-white md:mb-0"
           >
             Github
           </a>
@@ -51,7 +52,7 @@ const Home = () => {
             href="https://www.youtube.com/channel/UCn9Ir-KFtIWSntk6RzGE1-A"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 md:mb-0"
+            className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-white md:mb-0"
           >
             Youtube
           </a>
@@ -93,13 +94,14 @@ const Home = () => {
                 className="text-blue-500 underline"
               >
                 this.
-              </a>
+              </a>{" "}
+              Hopefully we can someday meet each other, in person. 
             </p>
           </div>
         </div>
       </div>
 
-      <div className="mt-8 flex flex-row space-x-2 items-baseline">
+      <div className="mt-8 flex flex-row space-x-3 items-baseline">
         <a
           href="https://calendly.com/eevaain/30min"
           target="_blank"
@@ -108,10 +110,10 @@ const Home = () => {
         >
           Say hi!
         </a>
-        <p className="font-semibold">{"*I dare you*"}</p>
+        <p>{"*I dare you*"}</p>
       </div>
     </div>
   );
-}
+};
 
 export default Home;
