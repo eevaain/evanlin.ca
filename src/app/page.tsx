@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Home() {
+const Home = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 pt-8 pb-8 mx-auto px-5  ">
       <h1 className="text-4xl font-bold mb-4">evanlin.ca</h1>
@@ -71,7 +71,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="text-blue-500 underline"
                 >
-                  Microsoft's Imagine Cup
+                  Microsoft Imagine Cup
                 </a>
               </li>
               <li>NLU intern @ Vocinity</li>
@@ -113,3 +113,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;
