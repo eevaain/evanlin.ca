@@ -71,7 +71,7 @@ const Home = () => {
                   rel="noopener noreferrer"
                   className="text-blue-500 underline"
                 >
-                  Microsoft's Imagine Cup
+                  {"Microsoft's Imagine Cup"}
                 </a>
               </li>
               <li>NLU intern @ Vocinity</li>
