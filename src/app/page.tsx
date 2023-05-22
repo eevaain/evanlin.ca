@@ -1,6 +1,6 @@
 import React from "react";
 
-function Home() {
+export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 pt-8 pb-8 mx-auto px-5  ">
       <h1 className="text-4xl font-bold mb-4">evanlin.ca</h1>
@@ -106,12 +106,10 @@ function Home() {
           rel="noopener noreferrer"
           className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
-          Say Hi!
+          Say hi!
         </a>
         <p className="font-semibold">{"*I dare you*"}</p>
       </div>
     </div>
   );
 }
-
-export default Home;
