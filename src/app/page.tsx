@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 pt-12 pb-8">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 pt-12 pb-8 mx-auto px-5">
       <h1 className="text-4xl font-bold mb-4">Evan Lin</h1>
       <div className="max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
         <img src="me.jpg" alt="Evan Lin" className="w-full" />
@@ -22,40 +22,42 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="bg-gray-200 px-6 py-4">
-          <a
-            href="https://curius.app/evan-lin"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-          >
-            Readings
-          </a>
-          <a
-            href="https://twitter.com/evannlinn"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-          >
-            Twitter
-          </a>
-          <a
-            href="https://github.com/eevaain"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
-          >
-            Github
-          </a>
-          <a
-            href="https://www.youtube.com/channel/UCn9Ir-KFtIWSntk6RzGE1-A"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700"
-          >
-            Youtube
-          </a>
-        </div>
+        <div className="bg-gray-200 px-6 py-4 flex flex-wrap gap-2">
+  <a
+    href="https://curius.app/evan-lin"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mb-2 md:mb-0"
+  >
+    Readings
+  </a>
+  <a
+    href="https://twitter.com/evannlinn"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mb-2 md:mb-0"
+  >
+    Twitter
+  </a>
+  <a
+    href="https://github.com/eevaain"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mb-2 md:mb-0"
+  >
+    Github
+  </a>
+  <a
+    href="https://www.youtube.com/channel/UCn9Ir-KFtIWSntk6RzGE1-A"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mb-2 md:mb-0"
+  >
+    Youtube
+  </a>
+</div>
+
+
       </div>
 
       <div className="mt-8 flex flex-col space-y-4">
