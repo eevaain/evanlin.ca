@@ -1,9 +1,9 @@
 import React from "react";
-import Image from "next/image"; // yeah ill fix this later 
+import Image from "next/image"; // yeah ill fix this later
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 pt-8 pb-8 mx-auto px-5  ">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 pt-8 pb-8 mx-auto px-5">
       <h1 className="text-4xl font-bold mb-4">evanlin.ca</h1>
       <div className="max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
         <img src="me.jpg" alt="Evan Lin" className="w-full" />
@@ -85,8 +85,18 @@ const Home = () => {
           <div className="px-6 py-4">
             <h2 className="text-xl font-bold mb-2">On the Side</h2>
             <p className="text-gray-700 text-base">
-              I enjoy indulging in low-level projects like building homebrew
-              computers. I also think a lot about{" "}
+              I take great pleasure in immersing myself in low-level projects
+              like building{" "}
+              <a
+                href="/homebrew-computer"
+                className="text-blue-500 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                homebrew computers
+              </a>
+              
+              . I also think a lot about{" "}
               <a
                 href="https://www.lesswrong.com/posts/va3TazozR9uWBfAoM/stop-trying-to-have-interesting-friends?curius=2895"
                 target="_blank"
@@ -95,7 +105,7 @@ const Home = () => {
               >
                 this.
               </a>{" "}
-              Hopefully we can someday meet each other, in person. 
+              I look forward to the day when our paths intersect.
             </p>
           </div>
         </div>
