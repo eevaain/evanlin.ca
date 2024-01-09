@@ -1,25 +1,24 @@
 import React from "react";
 import Image from "next/image"; // yeah ill fix this later
+import Link from "next/link";
 
-const Home = () => {
+function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 pt-8 pb-8 mx-auto px-5">
-      <h1 className="text-4xl font-bold mb-4">evanlin.ca</h1>
+      <h1 className="text-4xl font-bold mb-2">evanlin.ca</h1>
+
+      <div className="flex flex-row gap-8 mb-4">
+        <Link href="/">home</Link >
+        <Link href="/writing">writing</Link>
+      </div>
+
       <div className="max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
         <img src="me.jpg" alt="Evan Lin" className="w-full" />
         <div className="px-6 py-4">
           <h2 className="text-xl font-bold mb-2">Currently</h2>
           <p className="text-gray-700 text-base">
-            On a gap year seeking new experiences, travelling to new places &
-            building a search engine for startups at{" "}
-            <a
-              href="https://www.joinaviato.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 underline"
-            >
-              Aviato.
-            </a>
+            Studying engineering in my first year at
+            the University of Western Ontario. 
           </p>
         </div>
 
@@ -64,17 +63,9 @@ const Home = () => {
           <div className="px-6 py-4">
             <h2 className="text-xl font-bold mb-2">Previously </h2>
             <ul className="list-disc list-inside text-gray-700 text-base">
-              <li>
-                World Finalist in{" "}
-                <a
-                  href="https://imaginecup.microsoft.com/en-us/Team/550518d7-d2a6-4e64-96e5-a82bba7fe27c"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 underline"
-                >
-                  {"Microsoft's Imagine Cup"}
-                </a>
-              </li>
+              <li>Took a gap year in 2022-2023 and FAFO</li>
+              <li>Built search engines for startups @ Aviato</li>
+              <li>World Finalist in Microsoft Imagine Cup</li>
               <li>NLU intern @ Vocinity</li>
               <li>Built a data analytics platform for crypto wallets</li>
             </ul>
@@ -95,7 +86,6 @@ const Home = () => {
               >
                 homebrew computers
               </a>
-              
               . I also think a lot about{" "}
               <a
                 href="https://www.lesswrong.com/posts/va3TazozR9uWBfAoM/stop-trying-to-have-interesting-friends?curius=2895"
@@ -124,6 +114,6 @@ const Home = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Home;
