@@ -1,60 +1,51 @@
 import React from "react";
 import Image from "next/image"; // yeah ill fix this later
-import Link from "next/link";
+import Navigation from "@/components/navigation";
 
 function Home() {
+  const buttons = [
+    { title: "Readings", href: "https://curius.app/evan-lin" },
+    { title: "Twitter", href: "https://twitter.com/evannlinn" },
+    { title: "Github", href: "https://github.com/eevaain" },
+    {
+      title: " Youtube",
+      href: "https://www.youtube.com/channel/UCn9Ir-KFtIWSntk6RzGE1-A",
+    },
+  ];
+
+  const expList = [
+    { exp: "Took a gap year in 2022-2023 to FAFO" },
+    { exp: "Built search engines for startups @ Aviato" },
+    { exp: "World Finalist in Microsoft Imagine Cup" },
+    { exp: "NLU intern @ Vocinity" },
+    { exp: "Built a data analytics platform for crypto wallets" },
+  ];
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 pt-8 pb-8 mx-auto px-5">
       <h1 className="text-4xl font-bold mb-2">evanlin.ca</h1>
-
-      <div className="flex flex-row gap-8 mb-4">
-        <Link href="/">home</Link >
-        <Link href="/writing">writing</Link>
-      </div>
-
+      <Navigation />
       <div className="max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
         <img src="me.jpg" alt="Evan Lin" className="w-full" />
         <div className="px-6 py-4">
           <h2 className="text-xl font-bold mb-2">Currently</h2>
           <p className="text-gray-700 text-base">
-            Studying engineering in my first year at
-            the University of Western Ontario. 
+            Studying engineering in my first year at the University of Western
+            Ontario.
           </p>
         </div>
 
         <div className="bg-gray-200 px-6 py-4 flex flex-wrap gap-2">
-          <a
-            href="https://curius.app/evan-lin"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-white md:mb-0"
-          >
-            Readings
-          </a>
-          <a
-            href="https://twitter.com/evannlinn"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-white md:mb-0"
-          >
-            Twitter
-          </a>
-          <a
-            href="https://github.com/eevaain"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-white md:mb-0"
-          >
-            Github
-          </a>
-          <a
-            href="https://www.youtube.com/channel/UCn9Ir-KFtIWSntk6RzGE1-A"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-white md:mb-0"
-          >
-            Youtube
-          </a>
+          {buttons.map((button) => (
+            <a
+              href={button.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-white md:mb-0"
+            >
+              {button.title}
+            </a>
+          ))}
         </div>
       </div>
 
@@ -63,11 +54,9 @@ function Home() {
           <div className="px-6 py-4">
             <h2 className="text-xl font-bold mb-2">Previously </h2>
             <ul className="list-disc list-inside text-gray-700 text-base">
-              <li>Took a gap year in 2022-2023 and FAFO</li>
-              <li>Built search engines for startups @ Aviato</li>
-              <li>World Finalist in Microsoft Imagine Cup</li>
-              <li>NLU intern @ Vocinity</li>
-              <li>Built a data analytics platform for crypto wallets</li>
+              {expList.map((exp) => (
+                <li>{exp.exp}</li>
+              ))}
             </ul>
           </div>
         </div>
