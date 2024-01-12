@@ -1,6 +1,6 @@
 import Navigation from "@/components/navigation";
 
-export default function Writing() {
+const Home = () => {
   // if i remember correctly there should be a way for me to reuse the prev evanlin.ca, home and writing divs without rerender
   // preventing remount? is that the right term?
 
@@ -8,17 +8,17 @@ export default function Writing() {
     {
       title: "Rabbitholes",
       href: "https://open.substack.com/pub/evanlin/p/november?r=a7px3&utm_campaign=post&utm_medium=web&showWelcome=true",
-      date: "Janurary 9th 2024",
+      date: "Janurary 9th, 2024",
     },
     {
       title: "Test Test Test",
       href: "https://open.substack.com/pub/evanlin/p/november?r=a7px3&utm_campaign=post&utm_medium=web&showWelcome=true",
-      date: "Janurary 8th 2024",
+      date: "Janurary 8th, 2024",
     },
     {
       title: "Test Test Test",
       href: "https://open.substack.com/pub/evanlin/p/november?r=a7px3&utm_campaign=post&utm_medium=web&showWelcome=true",
-      date: "Janurary 6th 2024",
+      date: "Janurary 6th, 2024",
     },
   ];
 
@@ -30,7 +30,7 @@ export default function Writing() {
 
       <Navigation />
 
-      <div className="flex flex-col p-8 gap-4 w-full">
+      <div className="flex flex-col p-10 gap-4 w-full">
         {articles.map((article, index) => (
           <div>
             <a
@@ -48,4 +48,6 @@ export default function Writing() {
       </div>
     </div>
   );
-}
+};
+
+export default Home;
