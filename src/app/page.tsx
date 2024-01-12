@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image"; // yeah ill fix this later
 import Navigation from "@/components/navigation";
 
-function Home() {
+export default function Home() {
   const buttons = [
     { title: "Readings", href: "https://curius.app/evan-lin" },
     { title: "Twitter", href: "https://twitter.com/evannlinn" },
@@ -106,4 +106,4 @@ function Home() {
   );
 }
 
-export default Home;
+

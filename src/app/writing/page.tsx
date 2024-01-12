@@ -1,6 +1,6 @@
 import Navigation from "@/components/navigation";
 
-const Home = () => {
+const Writing = () => {
   // if i remember correctly there should be a way for me to reuse the prev evanlin.ca, home and writing divs without rerender
   // preventing remount? is that the right term?
 
@@ -50,4 +50,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Writing;
