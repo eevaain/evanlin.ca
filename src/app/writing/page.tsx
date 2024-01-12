@@ -32,9 +32,8 @@ export default function Writing() {
 
       <div className="flex flex-col p-10 gap-4 w-full">
         {articles.map((article, index) => (
-          <div>
+          <div key={index}>
             <a
-              key={index}
               href={article.href}
               target="_blank"
               rel="noopener noreferrer"
@@ -42,9 +41,7 @@ export default function Writing() {
             >
               {article.title}
             </a>
-            <p key={index} className="text-slate-600">
-              {article.date}
-            </p>
+            <p className="text-slate-600">{article.date}</p>
           </div>
         ))}
       </div>
