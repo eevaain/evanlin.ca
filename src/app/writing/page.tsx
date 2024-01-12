@@ -42,10 +42,12 @@ export default function Writing() {
             >
               {article.title}
             </a>
-            <p className="text-slate-600">{article.date}</p>
+            <p key={index} className="text-slate-600">
+              {article.date}
+            </p>
           </div>
         ))}
       </div>
     </div>
   );
-};
+}
