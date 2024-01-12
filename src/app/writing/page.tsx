@@ -10,16 +10,16 @@ export default function Writing() {
       href: "https://open.substack.com/pub/evanlin/p/november?r=a7px3&utm_campaign=post&utm_medium=web&showWelcome=true",
       date: "Janurary 9th, 2024",
     },
-    {
-      title: "Test Test Test",
-      href: "https://open.substack.com/pub/evanlin/p/november?r=a7px3&utm_campaign=post&utm_medium=web&showWelcome=true",
-      date: "Janurary 8th, 2024",
-    },
-    {
-      title: "Test Test Test",
-      href: "https://open.substack.com/pub/evanlin/p/november?r=a7px3&utm_campaign=post&utm_medium=web&showWelcome=true",
-      date: "Janurary 6th, 2024",
-    },
+    // {
+    //   title: "Test Test Test",
+    //   href: "https://open.substack.com/pub/evanlin/p/november?r=a7px3&utm_campaign=post&utm_medium=web&showWelcome=true",
+    //   date: "Janurary 8th, 2024",
+    // },
+    // {
+    //   title: "Test Test Test",
+    //   href: "https://open.substack.com/pub/evanlin/p/november?r=a7px3&utm_campaign=post&utm_medium=web&showWelcome=true",
+    //   date: "Janurary 6th, 2024",
+    // },
   ];
 
   return (
