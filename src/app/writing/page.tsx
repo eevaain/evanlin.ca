@@ -31,7 +31,7 @@ export default function Writing() {
       <Navigation />
 
       <div className="flex flex-col p-10 gap-4 w-full">
-        {/* {articles.map((article, index) => (
+        {articles.map((article, index) => (
           <div key={index}>
             <a
               href={article.href}
@@ -43,7 +43,7 @@ export default function Writing() {
             </a>
             <p className="text-slate-600">{article.date}</p>
           </div>
-        ))} */}
+        ))}
       </div>
     </div>
   );
