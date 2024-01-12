@@ -36,8 +36,9 @@ function Home() {
         </div>
 
         <div className="bg-gray-200 px-6 py-4 flex flex-wrap gap-2">
-          {buttons.map((button) => (
+          {buttons.map((button, index) => (
             <a
+              key={index}
               href={button.href}
               target="_blank"
               rel="noopener noreferrer"
@@ -54,8 +55,8 @@ function Home() {
           <div className="px-6 py-4">
             <h2 className="text-xl font-bold mb-2">Previously </h2>
             <ul className="list-disc list-inside text-gray-700 text-base">
-              {expList.map((exp) => (
-                <li>{exp.exp}</li>
+              {expList.map((exp, index) => (
+                <li key={index}>{exp.exp}</li>
               ))}
             </ul>
           </div>

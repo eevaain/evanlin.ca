@@ -31,9 +31,10 @@ export default function Writing() {
       <Navigation />
 
       <div className="flex flex-col p-8 gap-4 w-full">
-        {articles.map((article) => (
+        {articles.map((article, index) => (
           <div>
             <a
+              key={index}
               href={article.href}
               target="_blank"
               rel="noopener noreferrer"
