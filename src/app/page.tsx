@@ -36,7 +36,7 @@ export default function Home() {
         </div>
 
         <div className="bg-gray-200 px-6 py-4 flex flex-wrap gap-2">
-          {buttons.map((button, index) => (
+          {/* {buttons.map((button, index) => (
             <a
               key={index}
               href={button.href}
@@ -46,7 +46,7 @@ export default function Home() {
             >
               {button.title}
             </a>
-          ))}
+          ))} */}
         </div>
       </div>
 
@@ -55,9 +55,9 @@ export default function Home() {
           <div className="px-6 py-4">
             <h2 className="text-xl font-bold mb-2">Previously </h2>
             <ul className="list-disc list-inside text-gray-700 text-base">
-              {expList.map((exp, index) => (
+              {/* {expList.map((exp, index) => (
                 <li key={index}>{exp.exp}</li>
-              ))}
+              ))} */}
             </ul>
           </div>
         </div>
