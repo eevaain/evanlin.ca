@@ -2,24 +2,19 @@ import Navigation from "@/components/navigation";
 
 export default function Writing() {
   // if i remember correctly there should be a way for me to reuse the prev evanlin.ca, home and writing divs without rerender
-  // preventing remount? is that the right term?
+  // preventing remount? is that the right term? kkjkj
 
   const articles = [
     {
+      title: "Rekindling childlike wonder",
+      href: "https://evanlin.substack.com/p/rekindling-childlike-wonder",
+      date: "March 29th, 2024",
+    },
+    {
       title: "Rabbitholes",
       href: "https://open.substack.com/pub/evanlin/p/november?r=a7px3&utm_campaign=post&utm_medium=web&showWelcome=true",
-      date: "Janurary 9th, 2024",
+      date: "January 9th, 2024",
     },
-    // {
-    //   title: "Test Test Test",
-    //   href: "https://open.substack.com/pub/evanlin/p/november?r=a7px3&utm_campaign=post&utm_medium=web&showWelcome=true",
-    //   date: "Janurary 8th, 2024",
-    // },
-    // {
-    //   title: "Test Test Test",
-    //   href: "https://open.substack.com/pub/evanlin/p/november?r=a7px3&utm_campaign=post&utm_medium=web&showWelcome=true",
-    //   date: "Janurary 6th, 2024",
-    // },
   ];
 
   return (
