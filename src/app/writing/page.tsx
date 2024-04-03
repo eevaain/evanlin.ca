@@ -6,6 +6,11 @@ export default function Writing() {
 
   const articles = [
     {
+      title: "On creative writing",
+      href: "https://evanlin.substack.com/p/creative-writing",
+      date: "April 3rd, 2024",
+    },
+    {
       title: "Rekindling childlike wonder",
       href: "https://evanlin.substack.com/p/rekindling-childlike-wonder",
       date: "March 29th, 2024",

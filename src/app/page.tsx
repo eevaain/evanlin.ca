@@ -18,7 +18,7 @@ export default function Home() {
     { exp: "Built search engines for startups @ Aviato" },
     { exp: "World Finalist in Microsoft Imagine Cup" },
     { exp: "NLU intern @ Vocinity" },
-    { exp: "Built a data analytics platform for crypto wallets" },
+    { exp: "Co-founded a data analytics platform for crypto wallets" },
   ];
 
   return (
@@ -66,16 +66,6 @@ export default function Home() {
           <div className="px-6 py-4">
             <h2 className="text-xl font-bold mb-2">On the Side</h2>
             <p className="text-gray-700 text-base">
-              I take great pleasure in immersing myself in low-level projects
-              like building{" "}
-              <a
-                href="/homebrew-computer"
-                className="text-blue-500 underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                homebrew computers
-              </a>
               . I also think a lot about{" "}
               <a
                 href="https://www.lesswrong.com/posts/va3TazozR9uWBfAoM/stop-trying-to-have-interesting-friends?curius=2895"
