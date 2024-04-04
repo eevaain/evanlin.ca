@@ -30,26 +30,23 @@ export default function Home() {
         <div className="px-6 py-4">
           <h2 className="text-xl font-bold mb-2">About me</h2>
 
-          <div className ="space-y-4 px-2 py-1">
+          <div className="space-y-4 px-2 py-1">
+            <p className="text-gray-700 text-base">
+              Studying engineering in my first year at the University of Western
+              Ontario.
+            </p>
 
-          <p className="text-gray-700 text-base">
-            Studying engineering in my first year at the University of Western
-            Ontario.
-          </p>
+            <p className="text-gray-700 text-base">
+              Websites just don't capture the full depth of who we are. This one
+              is still a work in progress...
+            </p>
 
-          <p className="text-gray-700 text-base">
-             Websites just don't capture the full depth of who we are. This one is still a work in progress...
-          </p>
+            <p className="text-gray-700 text-base"></p>
 
-          <p className="text-gray-700 text-base">
-            
-          </p>
-
-          <p className="text-gray-700 text-base">
-            But in the meantime, maybe we should talk! :)
-          </p>
+            <p className="text-gray-700 text-base">
+            But in the meantime, maybe we should talk! :&#41;
+            </p>
           </div>
-        
         </div>
 
         <div className="bg-gray-200 px-6 py-4 flex flex-wrap gap-2">
@@ -112,5 +109,3 @@ export default function Home() {
     </div>
   );
 }
-
-
