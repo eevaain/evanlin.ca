@@ -44,7 +44,7 @@ export default function Home() {
             <p className="text-gray-700 text-base"></p>
 
             <p className="text-gray-700 text-base">
-            But in the meantime, maybe we should talk! :&#41;
+            But in the meantime, maybe we should talk! 😊
             </p>
           </div>
         </div>
