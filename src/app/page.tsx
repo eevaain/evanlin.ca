@@ -37,14 +37,14 @@ export default function Home() {
             </p>
 
             <p className="text-gray-700 text-base">
-              Websites just don't capture the full depth of who we are. This one
+              Websites just don{"'"}t capture the full depth of who we are. This one
               is still a work in progress...
             </p>
 
             <p className="text-gray-700 text-base"></p>
 
             <p className="text-gray-700 text-base">
-            But in the meantime, maybe we should talk! 
+            But in the meantime, maybe we should talk! :{")"}
             </p>
           </div>
         </div>
