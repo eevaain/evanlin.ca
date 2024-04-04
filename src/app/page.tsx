@@ -28,11 +28,28 @@ export default function Home() {
       <div className="max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
         <img src="me.jpg" alt="Evan Lin" className="w-full" />
         <div className="px-6 py-4">
-          <h2 className="text-xl font-bold mb-2">Currently</h2>
+          <h2 className="text-xl font-bold mb-2">About me</h2>
+
+          <div className ="space-y-4 px-2 py-1">
+
           <p className="text-gray-700 text-base">
             Studying engineering in my first year at the University of Western
             Ontario.
           </p>
+
+          <p className="text-gray-700 text-base">
+             Websites just don't capture the full depth of who we are. This one is still a work in progress...
+          </p>
+
+          <p className="text-gray-700 text-base">
+            
+          </p>
+
+          <p className="text-gray-700 text-base">
+            But in the meantime, maybe we should talk! :)
+          </p>
+          </div>
+        
         </div>
 
         <div className="bg-gray-200 px-6 py-4 flex flex-wrap gap-2">
@@ -66,7 +83,7 @@ export default function Home() {
           <div className="px-6 py-4">
             <h2 className="text-xl font-bold mb-2">On the Side</h2>
             <p className="text-gray-700 text-base">
-              . I also think a lot about{" "}
+              I think a lot about{" "}
               <a
                 href="https://www.lesswrong.com/posts/va3TazozR9uWBfAoM/stop-trying-to-have-interesting-friends?curius=2895"
                 target="_blank"
