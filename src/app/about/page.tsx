@@ -13,7 +13,7 @@ export default function About() {
 
         <p>Hi! I'm Evan.</p>
         <p>
-          I’m fascinated by the fundamental building blocks of our world and how
+          I{"'"}m fascinated by the fundamental building blocks of our world and how
           they make up the black boxes in our everyday lives.
         </p>
         <p>
@@ -22,7 +22,7 @@ export default function About() {
         </p>
         <p>
           I also love telling stories. Especially making people excited about things
-          they didn’t know they could feel excited about.
+          they didn{"'"}t know they could feel excited about.
         </p>
         <p>
           Youtube used to be this medium for me. 
