@@ -23,12 +23,13 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 pt-8 pb-8 mx-auto px-5">
+      {/* refactor the evanlin.ca h1 tag later */}
       <h1 className="text-4xl font-bold mb-2">evanlin.ca</h1>
       <Navigation />
       <div className="max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
         <img src="me.jpg" alt="Evan Lin" className="w-full" />
         <div className="px-6 py-4">
-          <h2 className="text-xl font-bold mb-2">About me</h2>
+          <h2 className="text-xl font-bold mb-2">Currently</h2>
 
           <div className="space-y-4 px-2 py-1">
             <p className="text-gray-700 text-base">

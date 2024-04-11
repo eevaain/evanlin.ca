@@ -6,8 +6,12 @@ export default function Navigation() {
       <Link href="/" className="hover:underline">
         home
       </Link>
+
       <Link href="/writing" className="hover:underline">
         writing
+      </Link>
+      <Link href="/about" className="hover:underline">
+        about me
       </Link>
     </div>
   );

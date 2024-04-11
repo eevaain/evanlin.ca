@@ -23,7 +23,7 @@ export default function Writing() {
   ];
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-100 pt-8 pb-8 mx-auto px-5">
+    <div className="flex flex-col items-center min-h-screen bg-gray-100 pt-8 pb-8 mx-auto px-5 md:px-10">
       {/* or do i just make evanlin.ca, home and writing into
       a reusable component? will that prevent remounting? */}
       <h1 className="text-4xl font-bold mb-2">evanlin.ca</h1>
@@ -31,6 +31,7 @@ export default function Writing() {
       <Navigation />
 
       <div className="flex flex-col p-10 gap-4 w-full">
+      <h1 className="text-xl md:text-2xl underline">Writing</h1>
         {articles.map((article, index) => (
           <div key={index}>
             <a
