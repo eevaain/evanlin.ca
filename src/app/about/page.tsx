@@ -11,7 +11,7 @@ export default function About() {
       <div className="flex flex-col p-10 gap-4 w-full">
         <h1 className="text-xl md:text-2xl underline">About Me</h1>
 
-        <p>Hi! I'm Evan.</p>
+        <p>Hi! I{"'"}m Evan.</p>
         <p>
           I{"'"}m fascinated by the fundamental building blocks of our world and
           how they make up the black boxes in our everyday lives.
@@ -46,9 +46,9 @@ export default function About() {
           .
         </p>
 
-        <p>I think I'll return to making videos someday. Maybe soon.</p>
+        <p>I think I{"'"}ll return to making videos someday. Maybe soon.</p>
         <p>
-          After all, shouldn't we all be working on things which we enjoy and
+          After all, shouldn{"'"}t we all be working on things which we enjoy and
           come natural to us?
         </p>
       </div>
