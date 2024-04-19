@@ -23,28 +23,28 @@ export default function Writing() {
   ];
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-100 pt-8 pb-8 mx-auto px-5 md:px-10">
-      {/* or do i just make evanlin.ca, home and writing into
-      a reusable component? will that prevent remounting? */}
-      <h1 className="text-4xl font-bold mb-2">evanlin.ca</h1>
+    <div className="flex md:h-full md:pt-12 pt-8 pb-8 md:w-full justify-center ">
+      <div className="md:flex md:space-x-12 md:w-2/3 w-5/6 md:h-full ">
+        <Navigation/>
+        <div className="flex flex-col pt-4 gap-3.5 md:h-full px-4 md:px-0">
+          <h2 className="text-xl md:text-2xl underline">Musings</h2>
 
-      <Navigation />
-
-      <div className="flex flex-col p-10 gap-4 w-full">
-      <h1 className="text-xl md:text-2xl underline">Writing</h1>
-        {articles.map((article, index) => (
-          <div key={index}>
-            <a
-              href={article.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline text-xl"
-            >
-              {article.title}
-            </a>
-            <p className="text-slate-600">{article.date}</p>
+          <div className="flex flex-col gap-4 w-full md:h-full">
+            {articles.map((article, index) => (
+              <div key={index}>
+                <a
+                  href={article.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline "
+                >
+                  {article.title}
+                </a>
+                <p className="text-slate-600 text-sm">{article.date}</p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );

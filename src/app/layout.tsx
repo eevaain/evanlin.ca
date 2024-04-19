@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={spectral.className}>{children}</body>
+    <html lang="en" className="h-full">
+      <body className={`${spectral.className} bg-gray-100 h-full`}>{children}</body>
     </html>
   );
 }
