@@ -5,12 +5,12 @@ export default function Navigation() {
     <div className="md:flex flex-col md:space-x-2 md:gap-4 p-8 bg-red-900 text-white items-center md:h-full">
       <h2 className="text-3xl font-bold mb-2 ">evanlin.ca</h2>
 
-      <div className="flex md:flex-col gap-4 h-full">
-        <Link href="/" className="hover:underline md:text-md ">
+      <div className="flex md:flex-col md:gap-4 gap-2.5 h-full">
+        <Link href="/" className="hover:underline md:text-base text-sm">
           Home
         </Link>
 
-        <Link href="/writing" className="hover:underline">
+        <Link href="/writing" className="hover:underline md:text-base text-sm">
           Writing
         </Link>
 
@@ -18,7 +18,7 @@ export default function Navigation() {
           href="https://github.com/eevaain"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:underline"
+          className="hover:underline md:text-base text-sm"
         >
           Github
         </a>
@@ -27,7 +27,7 @@ export default function Navigation() {
           href="https://twitter.com/evannlinn"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:underline"
+          className="hover:underline md:text-base text-sm"
         >
           Twitter
         </a>
@@ -36,7 +36,7 @@ export default function Navigation() {
           href="https://www.youtube.com/channel/UCn9Ir-KFtIWSntk6RzGE1-A"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:underline"
+          className="hover:underline md:text-base text-sm"
         >
           Youtube
         </a>
@@ -46,7 +46,7 @@ export default function Navigation() {
         {/* add some stuff here at the end of the navbar */}
       </div>
 
-      <p>;{")"}</p>
+      <p className="hidden md:block">;{")"}</p>
     </div>
   );
 }
