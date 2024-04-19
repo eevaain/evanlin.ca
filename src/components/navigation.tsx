@@ -46,7 +46,7 @@ export default function Navigation() {
         {/* add some stuff here at the end of the navbar */}
       </div>
 
-      <p>;)</p>
+      <p>;{")"}</p>
     </div>
   );
 }

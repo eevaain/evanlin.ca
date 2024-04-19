@@ -86,7 +86,7 @@ export default function Home() {
 
           <p className="pt-8">Websites just don{"'"}t capture the full depth of who we are.</p>
           <p>This one is still a work in progress...</p>
-          <p>But in the meantime, maybe we should talk! :)</p>
+          <p>But in the meantime, maybe we should talk! :{")"}</p>
 
           <div className="pt-4 mb-8 flex flex-row space-x-3 items-baseline">
             <a
