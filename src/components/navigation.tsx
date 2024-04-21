@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navigation() {
   return (
@@ -46,7 +47,15 @@ export default function Navigation() {
         {/* add some stuff here at the end of the navbar */}
       </div>
 
-      <p className="hidden md:block">;{")"}</p>
+      {/* <p className="hidden md:block">;{")"}</p> */}
+      {/* <Image className="hidden md:block" src="/gmail-pixel-art.gif" alt="my gif" height={40} width={40} /> */}
+      <Image
+        className="hidden md:block cursor-pointer"
+        src="/pikachuslowed.gif"
+        alt="my gif"
+        height={60}
+        width={60}
+      />
     </div>
   );
 }
