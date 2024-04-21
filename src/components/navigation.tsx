@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Navigation() {
   return (
-    <div className="md:flex flex-col md:space-x-2 md:gap-4 p-8 bg-red-900 text-white items-center md:h-full">
+    <div className="md:flex flex-col md:space-x-2 md:gap-4 md:p-8 p-8 bg-red-900 text-white items-center md:h-full">
       <h2 className="text-3xl font-bold mb-2 ">evanlin.ca</h2>
 
       <div className="flex md:flex-col md:gap-4 gap-2.5 h-full">
