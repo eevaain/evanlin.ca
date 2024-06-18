@@ -6,6 +6,11 @@ export default function Writing() {
 
   const articles = [
     {
+      title: "Souls Who Inspire Me",
+      href: "https://evanlin.substack.com/p/souls-who-inspire-me",
+      date: "June 18th, 2024",
+    },
+    {
       title: "On creative writing",
       href: "https://evanlin.substack.com/p/creative-writing",
       date: "April 3rd, 2024",
