@@ -57,6 +57,7 @@ export default function Home() {
               Satiating my thirst for low level technologies (started building a minimal tpu on 05/20/24)
             </li>
             <li>And relearning how to play the piano</li>
+            <li>Singing!</li>
           </ul>
 
           <p>More recently, I{"'"}ve become increasingly curious about...</p>
