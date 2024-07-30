@@ -15,6 +15,10 @@ export default function Navigation() {
           Writing
         </Link>
 
+        <Link href="/reading" className="hover:underline md:text-base text-sm">
+          Reading
+        </Link>
+
         <a
           href="https://github.com/eevaain"
           target="_blank"
@@ -33,14 +37,14 @@ export default function Navigation() {
           Twitter
         </a>
 
-        <a
+        {/* <a
           href="https://www.youtube.com/channel/UCn9Ir-KFtIWSntk6RzGE1-A"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:underline md:text-base text-sm"
         >
           Youtube
-        </a>
+        </a> */}
 
         {/* maybe add a bytecode trail as an easter egg */}
 

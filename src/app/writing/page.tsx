@@ -32,7 +32,7 @@ export default function Writing() {
       <div className="md:flex md:space-x-12 md:w-2/3 w-5/6 md:h-full ">
         <Navigation/>
         <div className="flex flex-col pt-4 gap-3.5 md:h-full px-4 md:px-0">
-          <h2 className="text-xl md:text-2xl underline">Musings</h2>
+          <h2 className="text-xl md:text-2xl underline">Personal Musings</h2>
 
           <div className="flex flex-col gap-4 w-full md:h-full">
             {articles.map((article, index) => (
