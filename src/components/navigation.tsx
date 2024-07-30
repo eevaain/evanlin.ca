@@ -16,7 +16,7 @@ export default function Navigation() {
         </Link>
 
         <Link href="/reading" className="hover:underline md:text-base text-sm">
-          Reading
+          Links
         </Link>
 
         <a
