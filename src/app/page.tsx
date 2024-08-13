@@ -7,7 +7,7 @@ export default function Home() {
       <div className="md:flex md:space-x-12 md:w-2/3 w-5/6 "> 
         <Navigation />
         <div className="flex flex-col md:pt-4 pt-6 gap-2 overflow-auto px-4 md:px-0 md:pr-10">
-          <h2 className="text-xl md:text-2xl underline">About Me</h2>
+          <h2 className="text-xl md:text-2xl pb-2">about me</h2>
           <p>Hi! I{"'"}m Evan.</p>
           <p>
             I{"'"}m fascinated by the fundamental building blocks of our world
@@ -54,10 +54,10 @@ export default function Home() {
             </li>
 
             <li>
-              Satiating my thirst for low level technologies (started building a minimal tpu on 05/20/24)
+              Building a minimal tpu
             </li>
-            <li>And relearning how to play the piano</li>
-            <li>Singing!</li>
+            <li>Relearning how to play the piano</li>
+            <li>And singing!</li>
           </ul>
 
           <p>More recently, I{"'"}ve become increasingly curious about...</p>

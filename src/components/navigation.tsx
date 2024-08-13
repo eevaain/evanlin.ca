@@ -8,15 +8,15 @@ export default function Navigation() {
 
       <div className="flex md:flex-col md:gap-4 gap-2.5 h-full">
         <Link href="/" className="hover:underline md:text-base text-sm">
-          Home
+          home
         </Link>
 
         <Link href="/writing" className="hover:underline md:text-base text-sm">
-          Writing
+          blog
         </Link>
 
         <Link href="/reading" className="hover:underline md:text-base text-sm">
-          Links
+          links
         </Link>
 
         <a
@@ -25,7 +25,7 @@ export default function Navigation() {
           rel="noopener noreferrer"
           className="hover:underline md:text-base text-sm"
         >
-          Github
+          github
         </a>
 
         <a
@@ -34,7 +34,7 @@ export default function Navigation() {
           rel="noopener noreferrer"
           className="hover:underline md:text-base text-sm"
         >
-          Twitter
+          twitter
         </a>
 
         {/* <a
