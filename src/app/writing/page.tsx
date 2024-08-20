@@ -6,6 +6,11 @@ export default function Writing() {
 
   const articles = [
     {
+      title: "you (probably) shouldn't deprive yourself of the process of discovery",
+      href: "https://evanlin.substack.com/p/dont-deprive-yourself-of-the-process",
+      date: "Aug 20th, 2024",
+    },
+    {
       title: "funemployment in the bay",
       href: "https://evanlin.substack.com/p/funemployment-in-the-bay",
       date: "Aug 11th, 2024",
