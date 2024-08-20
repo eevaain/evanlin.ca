@@ -44,7 +44,7 @@ export default function Writing() {
           <h2 className="text-xl md:text-2xl">my yap :3</h2>
 
           <div className="flex flex-col gap-4 pt-4 w-full md:h-full">
-            <h3 className="text-lg md:text-xl text-gray-800">favourites</h3>
+            <h3 className="text-lg md:text-xl text-gray-800 font-semibold">favourites</h3>
             <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
               <a
                 href={favouriteArticle.href}
@@ -59,7 +59,7 @@ export default function Writing() {
 
             <hr className="border-t border-gray-200 my-4" />
 
-            <h3 className="text-lg md:text-xl text-gray-800">other yap</h3>
+            <h3 className="text-lg md:text-xl text-gray-800 font-semibold">other yap</h3>
             {otherArticles.map((article, index) => (
               <div key={index} className="bg-gray-50 p-4 rounded-lg shadow-sm mt-2">
                 <a
