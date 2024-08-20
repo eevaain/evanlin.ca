@@ -1,15 +1,13 @@
 import Navigation from "@/components/navigation";
 
 export default function Writing() {
-  // if i remember correctly there should be a way for me to reuse the prev evanlin.ca, home and writing divs without rerender
-  // preventing remount? is that the right term? kkjkj
+  const favouriteArticle = {
+    title: "you (probably) shouldn't deprive yourself of the process of discovery",
+    href: "https://evanlin.substack.com/p/dont-deprive-yourself-of-the-process",
+    date: "Aug 20th, 2024",
+  };
 
-  const articles = [
-    {
-      title: "you (probably) shouldn't deprive yourself of the process of discovery",
-      href: "https://evanlin.substack.com/p/dont-deprive-yourself-of-the-process",
-      date: "Aug 20th, 2024",
-    },
+  const otherArticles = [
     {
       title: "funemployment in the bay",
       href: "https://evanlin.substack.com/p/funemployment-in-the-bay",
@@ -38,24 +36,41 @@ export default function Writing() {
   ];
 
   return (
-    <div className="flex md:h-full md:pt-12 pt-8 pb-8 md:w-full justify-center ">
-      <div className="md:flex md:space-x-12 md:w-2/3 w-5/6 md:h-full ">
+    <div className="flex md:h-full md:pt-12 pt-8 pb-8 md:w-full justify-center">
+      <div className="md:flex md:space-x-12 md:w-2/3 w-5/6 md:h-full">
         <Navigation/>
-        <div className="flex flex-col pt-4 gap-3.5 md:h-full px-4 md:px-0">
-          <h2 className="text-xl md:text-2xl ">my yap :3</h2>
+        <div className="flex flex-col md:pt-4 pt-6 gap-2 overflow-auto px-4 md:px-0 md:pr-10">
+          
+          <h2 className="text-xl md:text-2xl">my yap :3</h2>
 
-          <div className="flex flex-col gap-4 w-full md:h-full">
-            {articles.map((article, index) => (
-              <div key={index}>
+          <div className="flex flex-col gap-4 pt-4 w-full md:h-full">
+            <h3 className="text-lg md:text-xl text-gray-800">favourites</h3>
+            <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
+              <a
+                href={favouriteArticle.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg hover:underline"
+              >
+                {favouriteArticle.title}
+              </a>
+              <p className="text-gray-500 text-sm mt-1">{favouriteArticle.date}</p>
+            </div>
+
+            <hr className="border-t border-gray-200 my-4" />
+
+            <h3 className="text-lg md:text-xl text-gray-800">other yap</h3>
+            {otherArticles.map((article, index) => (
+              <div key={index} className="bg-gray-50 p-4 rounded-lg shadow-sm mt-2">
                 <a
                   href={article.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:underline "
+                  className="text-lg  hover:underline"
                 >
                   {article.title}
                 </a>
-                <p className="text-slate-600 text-sm">{article.date}</p>
+                <p className="text-gray-500 text-sm mt-1">{article.date}</p>
               </div>
             ))}
           </div>
