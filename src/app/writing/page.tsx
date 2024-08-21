@@ -1,22 +1,24 @@
 import Navigation from "@/components/navigation";
 
 export default function Writing() {
-  const favouriteArticle = {
-    title: "you (probably) shouldn't deprive yourself of the process of discovery",
-    href: "https://evanlin.substack.com/p/dont-deprive-yourself-of-the-process",
-    date: "Aug 20th, 2024",
-  };
+  const favouriteArticles = [
+    {
+      title: "you (probably) shouldn't deprive yourself of the process of discovery",
+      href: "https://evanlin.substack.com/p/dont-deprive-yourself-of-the-process",
+      date: "Aug 20th, 2024",
+    },
+    {
+      title: "souls who inspire me",
+      href: "https://evanlin.substack.com/p/souls-who-inspire-me",
+      date: "June 18th, 2024",
+    },
+  ];
 
   const otherArticles = [
     {
       title: "funemployment in the bay",
       href: "https://evanlin.substack.com/p/funemployment-in-the-bay",
       date: "Aug 11th, 2024",
-    },
-    {
-      title: "souls who inspire me",
-      href: "https://evanlin.substack.com/p/souls-who-inspire-me",
-      date: "June 18th, 2024",
     },
     {
       title: "on creative writing",
@@ -45,17 +47,19 @@ export default function Writing() {
 
           <div className="flex flex-col gap-4 pt-4 w-full md:h-full">
             <h3 className="text-lg md:text-xl text-gray-800 font-semibold">favourites</h3>
-            <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-              <a
-                href={favouriteArticle.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg hover:underline"
-              >
-                {favouriteArticle.title}
-              </a>
-              <p className="text-gray-500 text-sm mt-1">{favouriteArticle.date}</p>
-            </div>
+            {favouriteArticles.map((article, index) => (
+              <div key={index} className="bg-gray-50 p-4 rounded-lg shadow-sm">
+                <a
+                  href={article.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg hover:underline"
+                >
+                  {article.title}
+                </a>
+                <p className="text-gray-500 text-sm mt-1">{article.date}</p>
+              </div>
+            ))}
 
             <hr className="border-t border-gray-200 my-4" />
 

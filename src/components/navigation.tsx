@@ -8,11 +8,11 @@ export default function Navigation() {
 
       <div className="flex md:flex-col md:gap-4 gap-2.5 h-full">
         <Link href="/" className="hover:underline md:text-base text-sm">
-          home
+          about
         </Link>
 
         <Link href="/writing" className="hover:underline md:text-base text-sm">
-          blog
+          blog!
         </Link>
 
         <Link href="/reading" className="hover:underline md:text-base text-sm">
@@ -35,6 +35,15 @@ export default function Navigation() {
           className="hover:underline md:text-base text-sm"
         >
           twitter
+        </a>
+
+        <a
+          href="https://twitter.com/evannlinn"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline md:text-base text-sm"
+        >
+          contact
         </a>
 
         {/* <a
