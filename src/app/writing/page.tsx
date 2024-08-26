@@ -48,7 +48,7 @@ export default function Writing() {
         <Navigation/>
         <div className="flex flex-col md:pt-4 pt-6 gap-2 overflow-auto px-4 md:px-0 md:pr-10">
           
-          <h2 className="text-xl md:text-2xl">evan's blog</h2>
+          <h2 className="text-xl md:text-2xl">evan{"'"}s blog</h2>
 
           <div className="flex flex-col gap-4 pt-4 w-full md:h-full">
             <h3 className="text-lg md:text-xl text-gray-800 font-semibold">favourites</h3>
