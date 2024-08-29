@@ -3,6 +3,11 @@ import Navigation from "@/components/navigation";
 export default function Writing() {
   const favouriteArticles = [
     {
+      title: "souls who inspire me",
+      href: "https://evanlin.substack.com/p/souls-who-inspire-me",
+      date: "June 18th, 2024",
+    },
+    {
       title: "to the young and ambitious: there's no rush to grow up",
       href: "https://evanlin.substack.com/p/to-the-young-and-ambitious-there",
       date: "Aug 23rd, 2024",
@@ -13,10 +18,11 @@ export default function Writing() {
       date: "Aug 20th, 2024",
     },
     {
-      title: "souls who inspire me",
-      href: "https://evanlin.substack.com/p/souls-who-inspire-me",
-      date: "June 18th, 2024",
+      title: "reflections on a year of daily paper journaling",
+      href: "https://evanlin.substack.com/p/i-tried-journaling-on-paper-everyday",
+      date: "Aug 28th, 2024",
     },
+
   ];
 
   const otherArticles = [
