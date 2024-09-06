@@ -7,7 +7,7 @@ export default function Home() {
       <div className="md:flex md:space-x-12 md:w-2/3 w-5/6 "> 
         <Navigation />
         <div className="flex flex-col md:pt-4 pt-6 gap-2 overflow-auto px-4 md:px-0 md:pr-10">
-          <h2 className="text-xl md:text-2xl pb-2">about me</h2>
+          <h2 className="text-xl md:text-2xl pb-2 text-red-900">about me</h2>
           <p>Hi! I{"'"}m Evan.</p>
           <p>
             I{"'"}m fascinated by the fundamental building blocks of our world

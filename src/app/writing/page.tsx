@@ -54,38 +54,36 @@ export default function Writing() {
         <Navigation/>
         <div className="flex flex-col md:pt-4 pt-6 gap-2 overflow-auto px-4 md:px-0 md:pr-10">
           
-          <h2 className="text-xl md:text-2xl">evan{"'"}s blog</h2>
+          <h2 className="text-xl md:text-2xl text-red-900">evan{"'"}s blog</h2>
 
-          <div className="flex flex-col gap-4 pt-4 w-full md:h-full">
-            <h3 className="text-lg md:text-xl text-gray-800 font-semibold">favourites</h3>
+          <div className="flex flex-col gap-4 pt-2 w-full md:h-full">
+            {/* <h3 className="text-lg md:text-xl text-gray-800 font-semibold">favourites</h3> */}
             {favouriteArticles.map((article, index) => (
-              <div key={index} className="bg-gray-50 p-4 rounded-lg shadow-sm">
+              <div key={index} className="">
                 <a
                   href={article.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-lg hover:underline"
+                  className="text-md hover:underline"
                 >
                   {article.title}
                 </a>
-                <p className="text-gray-500 text-sm mt-1">{article.date}</p>
+                <p className="text-gray-500 text-sm">{article.date}</p>
               </div>
             ))}
 
-            <hr className="border-t border-gray-200 my-4" />
-
-            <h3 className="text-lg md:text-xl text-gray-800 font-semibold">other writing</h3>
+            {/* might make this its own section?? */}
             {otherArticles.map((article, index) => (
-              <div key={index} className="bg-gray-50 p-4 rounded-lg shadow-sm mt-2">
+              <div key={index} className="">
                 <a
                   href={article.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-lg  hover:underline"
+                  className="text-md  hover:underline"
                 >
                   {article.title}
                 </a>
-                <p className="text-gray-500 text-sm mt-1">{article.date}</p>
+                <p className="text-gray-500 text-sm ">{article.date}</p>
               </div>
             ))}
           </div>
