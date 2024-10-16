@@ -49,7 +49,7 @@ export default function Home() {
           </p>
           <ul className="list-disc list-inside text-base space-y-0.75">
             <li>
-              Studying engineering in my first year at the University of Western
+              Studying ECE in my second year at the University of Western
               Ontario <s>and skipping many classes</s>
             </li>
 
