@@ -1,10 +1,9 @@
 import Navigation from "@/components/navigation";
 
-
 export default function Home() {
   return (
     <div className="flex md:pt-12 pt-8 pb-8 w-full justify-center h-full">
-      <div className="md:flex md:space-x-12 md:w-2/3 w-5/6 "> 
+      <div className="md:flex md:space-x-12 md:w-2/3 w-5/6 ">
         <Navigation />
         <div className="flex flex-col md:pt-4 pt-6 gap-2 overflow-auto px-4 md:px-0 md:pr-10">
           <h2 className="text-xl md:text-2xl pb-2 text-red-900">about me</h2>
@@ -53,9 +52,7 @@ export default function Home() {
               Ontario <s>and skipping many classes</s>
             </li>
 
-            <li>
-              Building a minimal tpu
-            </li>
+            <li>Building a minimal tpu</li>
             <li>Relearning how to play the piano</li>
             <li>And singing!</li>
           </ul>
@@ -70,17 +67,27 @@ export default function Home() {
               Non-dualistic principles and the fundamental nature of
               conciousness
             </li>
-            <li>And developmental psychology, particularly in early human development</li>
+            <li>
+              And developmental psychology, particularly in early human
+              development
+            </li>
+            <br />
+            <p>
+              Contact me at{" "}
+              <span className="text-red-900">evanlin416@gmail.com</span>
+            </p>
           </ul>
 
-          <p className="pt-8">Previously, I...</p>
+          <p className="pt-6">Previously, I...</p>
           <ul className="list-disc list-inside text-base space-y-0.75">
             <li>Took a gap year in 2022-2023 to FAFO</li>
             <li>Built search engines for startups @ Aviato</li>
             <li>Co-founded a data analytics platform for crypto wallets</li>
           </ul>
 
-          <p className="pt-8">Websites just don{"'"}t capture the full depth of who we are.</p>
+          <p className="pt-8">
+            Websites just don{"'"}t capture the full depth of who we are.
+          </p>
           <p>This one is still a work in progress...</p>
           <p>But in the meantime, maybe we should talk! :{")"}</p>
 
