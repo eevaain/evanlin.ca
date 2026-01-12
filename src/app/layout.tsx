@@ -17,7 +17,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-      <body className={`${spectral.className} bg-gray-100 h-full`}>{children}</body>
+      <head>
+        {/* Preconnect to improve font load performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        {/* Prefer using the Google Fonts CSS already loaded by next/font, but preload an early CSS resource if available */}
+      </head>
+      <body className={`${spectral.className} bg-gray-100 h-full`}>
+        {children}
+      </body>
     </html>
   );
 }

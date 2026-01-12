@@ -62,13 +62,16 @@ export default function Navigation() {
 
       {/* <p className="hidden md:block">;{")"}</p> */}
       {/* <Image className="hidden md:block" src="/gmail-pixel-art.gif" alt="my gif" height={40} width={40} /> */}
-      <Image
-        className="hidden md:block cursor-pointer"
-        src="/pikachuslowed.gif"
-        alt="my gif"
-        height={60}
-        width={60}
-      />
+      <div className="hidden md:block">
+        <Image
+          className="cursor-pointer"
+          src="/pikachuslowed.gif"
+          alt="my gif"
+          height={60}
+          width={60}
+          loading="lazy"
+        />
+      </div>
     </div>
   );
 }

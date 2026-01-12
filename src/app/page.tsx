@@ -75,6 +75,8 @@ export default function Home() {
 
           <p className="pt-8">Previously, I...</p>
           <ul className="list-disc list-inside text-base space-y-0.75">
+            <li>Worked on distributed systems @ Groq</li>
+            <li>Was an undergraduate Research Assistant @ University of Waterloo (WATCAG)</li>
             <li>Took a gap year in 2022-2023 to FAFO</li>
             <li>Built search engines for startups @ Aviato</li>
             <li>Co-founded a data analytics platform for crypto wallets</li>
