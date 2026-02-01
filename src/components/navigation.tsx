@@ -29,7 +29,7 @@ export default function Navigation() {
         </a>
 
         <a
-          href="https://twitter.com/evannlinn"
+          href="https://twitter.com/evanliin"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:underline md:text-base text-sm"
@@ -38,7 +38,7 @@ export default function Navigation() {
         </a>
 
         <a
-          href="https://twitter.com/evannlinn"
+          href="https://twitter.com/evanliin"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:underline md:text-base text-sm"

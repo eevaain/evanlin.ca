@@ -24,7 +24,7 @@ export default function Home() {
           <p>
             Nowadays, I try to share the things I do through{" "}
             <a
-              href="https://twitter.com/evannlinn"
+              href="https://twitter.com/evanliin"
               target="_blank"
               rel="noopener noreferrer"
               className=" text-red-800"
@@ -47,12 +47,10 @@ export default function Home() {
             But when I{"'"}m not doing either of the two, I am...
           </p>
           <ul className="list-disc list-inside text-base space-y-0.75">
+            <li>Working on inference @ NVIDIA</li>
             <li>
-              Working on inference @ NVIDIA
-            </li>
-            <li>
-              Studying ECE in my third year at the University of Western
-              Ontario <s>and skipping many classes</s>
+              Studying ECE in my third year at the University of Western Ontario{" "}
+              <s>and skipping many classes</s>
             </li>
             <li>Relearning how to play the piano</li>
             <li>And singing!</li>
@@ -82,7 +80,10 @@ export default function Home() {
           <p className="pt-6">Previously, I...</p>
           <ul className="list-disc list-inside text-base space-y-0.75">
             <li>Worked on distributed systems @ Groq</li>
-            <li>Was an undergraduate Research Assistant @ University of Waterloo (WATCAG)</li>
+            <li>
+              Was an undergraduate Research Assistant @ University of Waterloo
+              (WATCAG)
+            </li>
             <li>Took a gap year in 2022-2023 to FAFO</li>
             <li>Built search engines for startups @ Aviato</li>
             <li>Co-founded a data analytics platform for crypto wallets</li>
