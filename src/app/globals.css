@@ -8,5 +8,249 @@
   font-family: 'Albert Sans', sans-serif;
 }
 
-  
+.attnres-blog-prose {
+  @apply text-lg leading-[1.8] text-stone-800;
+}
 
+.attnres-blog-prose p {
+  @apply mb-6;
+}
+
+.attnres-blog-prose h2 {
+  @apply mb-6 mt-16 text-3xl font-semibold tracking-tight text-stone-900;
+}
+
+.attnres-blog-prose h3 {
+  @apply mb-4 mt-10 text-xl font-semibold text-stone-900;
+}
+
+.attnres-blog-prose a {
+  @apply text-amber-700 underline decoration-amber-300 underline-offset-2 transition-colors hover:decoration-amber-600;
+}
+
+.attnres-blog-prose strong {
+  @apply font-semibold text-stone-900;
+}
+
+.attnres-blog-prose em {
+  @apply italic text-stone-700;
+}
+
+.attnres-blog-prose code:not(pre code) {
+  @apply rounded bg-stone-100 px-1.5 py-0.5 font-mono text-[0.9em] text-stone-800;
+}
+
+.attnres-blog-prose pre {
+  @apply my-8 overflow-x-auto rounded-lg bg-stone-900 p-5 font-mono text-sm leading-relaxed text-stone-100;
+}
+
+.attnres-blog-prose blockquote {
+  @apply my-8 border-l-2 border-amber-400 pl-5 italic text-stone-600;
+}
+
+.attnres-blog-prose ul {
+  @apply mb-6 list-disc space-y-2 pl-6;
+}
+
+.attnres-blog-prose ol {
+  @apply mb-6 list-decimal space-y-2 pl-6;
+}
+
+.attnres-blog-prose hr {
+  @apply my-12 border-stone-200;
+}
+
+.attnres-manim-canvas {
+  @apply my-10 overflow-hidden rounded-xl border border-slate-800 bg-[#0F172A];
+  box-shadow: 0 0 40px rgba(15, 23, 42, 0.3);
+}
+
+.attnres-manim-grid {
+  background-image:
+    linear-gradient(rgba(100, 116, 139, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 116, 139, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.attnres-figure-caption {
+  @apply mt-3 text-center text-sm italic text-stone-500;
+}
+
+@keyframes attnres-draw-line {
+  from {
+    stroke-dashoffset: 1000;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes attnres-fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes attnres-fade-slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes attnres-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes attnres-grow-bar {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.attnres-animate-draw-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: attnres-draw-line 1.2s ease-out forwards;
+}
+
+.attnres-animate-fade-up {
+  opacity: 0;
+  animation: attnres-fade-slide-up 0.6s ease-out forwards;
+}
+
+.attnres-animate-fade-right {
+  opacity: 0;
+  animation: attnres-fade-slide-right 0.6s ease-out forwards;
+}
+
+.attnres-animate-scale-in {
+  opacity: 0;
+  animation: attnres-scale-in 0.5s ease-out forwards;
+}
+
+.attnres-animate-grow-bar {
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: attnres-grow-bar 0.8s ease-out forwards;
+}
+
+.attnres-delay-100 {
+  animation-delay: 100ms;
+}
+
+.attnres-delay-200 {
+  animation-delay: 200ms;
+}
+
+.attnres-delay-300 {
+  animation-delay: 300ms;
+}
+
+.attnres-delay-400 {
+  animation-delay: 400ms;
+}
+
+.attnres-delay-500 {
+  animation-delay: 500ms;
+}
+
+.attnres-delay-600 {
+  animation-delay: 600ms;
+}
+
+.attnres-delay-700 {
+  animation-delay: 700ms;
+}
+
+.attnres-delay-800 {
+  animation-delay: 800ms;
+}
+
+.attnres-delay-900 {
+  animation-delay: 900ms;
+}
+
+.attnres-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+.attnres-delay-1100 {
+  animation-delay: 1100ms;
+}
+
+.attnres-delay-1200 {
+  animation-delay: 1200ms;
+}
+
+.attnres-delay-1300 {
+  animation-delay: 1300ms;
+}
+
+.attnres-delay-1400 {
+  animation-delay: 1400ms;
+}
+
+.attnres-delay-1500 {
+  animation-delay: 1500ms;
+}
+
+.attnres-delay-1600 {
+  animation-delay: 1600ms;
+}
+
+.attnres-delay-1700 {
+  animation-delay: 1700ms;
+}
+
+.attnres-delay-1800 {
+  animation-delay: 1800ms;
+}
+
+.attnres-delay-1900 {
+  animation-delay: 1900ms;
+}
+
+.attnres-delay-2000 {
+  animation-delay: 2000ms;
+}
+
+.attnres-delay-2100 {
+  animation-delay: 2100ms;
+}
+
+.attnres-delay-2200 {
+  animation-delay: 2200ms;
+}
+
+.attnres-delay-2300 {
+  animation-delay: 2300ms;
+}
+
+.attnres-delay-2400 {
+  animation-delay: 2400ms;
+}

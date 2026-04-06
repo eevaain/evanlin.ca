@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Navigation from "@/components/navigation";
 
 export default function Writing() {
@@ -8,6 +9,12 @@ export default function Writing() {
   };
 
   const allArticles = [
+    {
+      title: "What I Learned Building Attention Residuals from Scratch",
+      href: "/reading/exploring attnres",
+      date: "April 2025",
+      internal: true,
+    },
     {
       title: "studio ghibli relationships",
       href: "https://evanlin.substack.com/p/studio-ghibli-relationships",
@@ -71,14 +78,20 @@ export default function Writing() {
           <div className="flex flex-col gap-4 pt-2 w-full md:h-full">
             {allArticles.map((article, index) => (
               <div key={index} className="">
-                <a
-                  href={article.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-md hover:underline"
-                >
-                  {article.title}
-                </a>
+                {article.internal ? (
+                  <Link href={article.href} className="text-md hover:underline">
+                    {article.title}
+                  </Link>
+                ) : (
+                  <a
+                    href={article.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-md hover:underline"
+                  >
+                    {article.title}
+                  </a>
+                )}
                 <p className="text-gray-500 text-sm">{article.date}</p>
               </div>
             ))}
