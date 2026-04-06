@@ -56,17 +56,17 @@ export default function ExploringAttentionResidualsPage() {
           <h1 className="mb-6 font-serif text-4xl font-bold leading-[1.15] tracking-tight text-stone-900 sm:text-5xl">
             What I Learned Building Attention Residuals from Scratch
           </h1>
-          <p className="font-serif text-xl italic leading-relaxed text-stone-500">
-            Reimplementing a paper in 260 lines of PyTorch changed how I think
-            about how transformers route information, and about the gap between
-            academic math and physical silicon.
-          </p>
-          <div className="mt-8 flex items-center gap-4 border-t border-stone-200 pt-8">
+          <div className="mb-8 flex items-center gap-4 border-t border-stone-200 pt-8">
             <div>
               <p className="font-medium text-stone-900">Evan Lin</p>
               <p className="text-sm text-stone-500">April 2025</p>
             </div>
           </div>
+          <p className="font-serif text-xl italic leading-relaxed text-stone-500">
+            Reimplementing a paper in 260 lines of PyTorch changed how I think
+            about how transformers route information, and about the gap between
+            academic math and physical silicon.
+          </p>
         </div>
       </header>
 
