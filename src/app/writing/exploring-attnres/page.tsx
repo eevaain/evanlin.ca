@@ -505,7 +505,7 @@ self.mlp_input_norm = nn.RMSNorm(D)`}
 
           <h3>The connection to hardware</h3>
           <p>
-            This project reshaped how I think about the boundary between
+            This little exploration reshaped how I think about the boundary between
             algorithms and silicon. The alpha gate is a beautiful mathematical
             idea, learned softmax routing over a depth history. But making it
             run fast on a GPU requires understanding that{' '}
@@ -634,7 +634,7 @@ self.mlp_input_norm = nn.RMSNorm(D)`}
           <p>
             Those are the kinds of details that matter when you&apos;re
             debugging a training run at 3 AM, or designing a custom hardware
-            accelerator, or trying to invent the next architecture. The gap
+            accelerator, or trying to invent the next architecture. I think the gap
             between &ldquo;I understand the math&rdquo; and &ldquo;I understand
             the plumbing&rdquo; is where engineering lives.
           </p>
@@ -642,7 +642,7 @@ self.mlp_input_norm = nn.RMSNorm(D)`}
             The full implementation is comprised of hacky PyTorch plumbing with a
             bunch of stream-of-consciousness comments/notes that helped me
             carefully comb through my thoughts, but probably won&apos;t be
-            important to you.
+            important to you. 
           </p>
           <h2>Hindsight</h2>
           <p>
@@ -651,6 +651,7 @@ self.mlp_input_norm = nn.RMSNorm(D)`}
           </p>
           <ul>
             <li>Implement Block AttnRes.</li>
+            <li>Change MHA to GQA.</li>
             <li>Train it for more than 50 epochs lol.</li>
             <li>Use a more modern optimizer.</li>
             <li>
@@ -687,7 +688,7 @@ self.mlp_input_norm = nn.RMSNorm(D)`}
             </em>
           </p>
           <p className="text-base text-stone-500">
-            Full code and training logs in the{' '}
+            Full code and some training logs in the{' '}
             <a
               href="https://github.com/eevaain/toy-attention-residuals"
               target="_blank"
