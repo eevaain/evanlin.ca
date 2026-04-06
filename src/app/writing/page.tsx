@@ -11,7 +11,7 @@ export default function Writing() {
   const allArticles = [
     {
       title: "What I Learned Building Attention Residuals from Scratch",
-      href: "/reading/exploring attnres",
+      href: "/writing/exploring attnres",
       date: "April 2025",
       internal: true,
     },

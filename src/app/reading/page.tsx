@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Navigation from "@/components/navigation";
 
 export default function Writing() {
@@ -6,12 +5,6 @@ export default function Writing() {
   // preventing remount? is that the right term? kkjkj
 
   const articles = [
-    {
-      title: "What I Learned Building Attention Residuals from Scratch",
-      href: "/reading/exploring attnres",
-      author: "Evan Lin",
-      internal: true,
-    },
     {
       title: "Sensitivity Is Strength!",
       href: "https://www.ask-polly.com/p/sensitivity-is-strength?utm_source=post-email-title&publication_id=30395&post_id=146917225&utm_campaign=email-post-title&isFreemail=true&r=yh32c&triedRedirect=true&utm_medium=email",
@@ -64,20 +57,14 @@ export default function Writing() {
           <div className="flex flex-col gap-4 w-full md:h-full">
             {articles.map((article, index) => (
               <div key={index}>
-                {article.internal ? (
-                  <Link href={article.href} className="hover:underline text-md">
-                    {article.title}
-                  </Link>
-                ) : (
-                  <a
-                    href={article.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline text-md"
-                  >
-                    {article.title}
-                  </a>
-                )}
+                <a
+                  href={article.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline text-md"
+                >
+                  {article.title}
+                </a>
                 <p className="text-slate-600 text-sm">{article.author}</p>
               </div>
             ))}

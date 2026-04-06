@@ -1,4 +1,9 @@
 import type { Metadata } from 'next';
+import {
+  Inter,
+  JetBrains_Mono,
+  Source_Serif_4,
+} from 'next/font/google';
 import Link from 'next/link';
 
 import AlphaGatePipeline from '@/components/exploringattnres/AlphaGatePipeline';
@@ -6,6 +11,21 @@ import CodeBlock from '@/components/exploringattnres/CodeBlock';
 import DatabaseGrowth from '@/components/exploringattnres/DatabaseGrowth';
 import ResidualComparison from '@/components/exploringattnres/ResidualComparison';
 import TrainingChart from '@/components/exploringattnres/TrainingChart';
+
+const attnResSans = Inter({
+  subsets: ['latin'],
+  variable: '--font-attnres-sans',
+});
+
+const attnResSerif = Source_Serif_4({
+  subsets: ['latin'],
+  variable: '--font-attnres-serif',
+});
+
+const attnResMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-attnres-mono',
+});
 
 export const metadata: Metadata = {
   title: 'Exploring Attention Residuals | Evan Lin',
@@ -15,14 +35,16 @@ export const metadata: Metadata = {
 
 export default function ExploringAttentionResidualsPage() {
   return (
-    <main className="min-h-screen bg-[#FAFAF9] text-stone-800">
+    <main
+      className={`attnres-shell min-h-screen bg-[#FAFAF9] text-stone-800 ${attnResSans.variable} ${attnResSerif.variable} ${attnResMono.variable}`}
+    >
       <div className="mx-auto max-w-2xl px-6 pt-8">
         <Link
-          href="/reading"
+          href="/writing"
           className="inline-flex items-center gap-2 text-sm text-amber-700 underline decoration-amber-300 underline-offset-4 transition-colors hover:text-amber-900 hover:decoration-amber-600"
         >
           <span aria-hidden="true">←</span>
-          Back to reading
+          Back to blog
         </Link>
       </div>
 
@@ -31,10 +53,10 @@ export default function ExploringAttentionResidualsPage() {
           <p className="mb-4 font-mono text-sm uppercase tracking-wide text-amber-700">
             Research Notes
           </p>
-          <h1 className="mb-6 text-4xl font-bold leading-[1.15] tracking-tight text-stone-900 sm:text-5xl">
+          <h1 className="mb-6 font-serif text-4xl font-bold leading-[1.15] tracking-tight text-stone-900 sm:text-5xl">
             What I Learned Building Attention Residuals from Scratch
           </h1>
-          <p className="text-xl italic leading-relaxed text-stone-500">
+          <p className="font-serif text-xl italic leading-relaxed text-stone-500">
             Reimplementing a paper in 260 lines of PyTorch changed how I think
             about how transformers route information, and about the gap between
             academic math and physical silicon.
