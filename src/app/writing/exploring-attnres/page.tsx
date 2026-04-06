@@ -173,7 +173,7 @@ export default function ExploringAttentionResidualsPage() {
           </p>
           <p>
             The residual stream helps, because the original signal is
-            additively preserved. But the <em>relative contribution</em> of
+            additively preserved. But the <em>relative contribution </em> of
             early layers shrinks as more terms get summed in. There&apos;s no
             mechanism for a later layer to say: &ldquo;I specifically need 80%
             of the embedding and only 5% of Layer 3.&rdquo;
