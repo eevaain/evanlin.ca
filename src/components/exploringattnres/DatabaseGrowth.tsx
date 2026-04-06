@@ -85,7 +85,7 @@ export default function DatabaseGrowth() {
   }
 
   return (
-    <figure ref={containerRef}>
+    <figure ref={containerRef} className="mb-12">
       <div className="attnres-manim-canvas attnres-manim-grid relative">
         <svg
           viewBox={`0 0 ${SVG_W} ${SVG_H}`}

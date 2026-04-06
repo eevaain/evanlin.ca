@@ -12,7 +12,7 @@ export default function Writing() {
     {
       title: "What I Learned Building Attention Residuals from Scratch",
       href: "/writing/exploring-attnres",
-      date: "April 2025",
+      date: "April 2026",
       internal: true,
     },
     {

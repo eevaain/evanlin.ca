@@ -1,30 +1,19 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
+
 import type { Metadata } from 'next';
-import {
-  Inter,
-  JetBrains_Mono,
-  Source_Serif_4,
-} from 'next/font/google';
-import Link from 'next/link';
+import Image from 'next/image';
+import { Spectral } from 'next/font/google';
 
 import AlphaGatePipeline from '@/components/exploringattnres/AlphaGatePipeline';
 import CodeBlock from '@/components/exploringattnres/CodeBlock';
 import DatabaseGrowth from '@/components/exploringattnres/DatabaseGrowth';
+import MemoryCoalescing from '@/components/exploringattnres/MemoryCoalescing';
 import ResidualComparison from '@/components/exploringattnres/ResidualComparison';
 import TrainingChart from '@/components/exploringattnres/TrainingChart';
 
-const attnResSans = Inter({
+const siteBrand = Spectral({
   subsets: ['latin'],
-  variable: '--font-attnres-sans',
-});
-
-const attnResSerif = Source_Serif_4({
-  subsets: ['latin'],
-  variable: '--font-attnres-serif',
-});
-
-const attnResMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-attnres-mono',
+  weight: ['400', '700'],
 });
 
 export const metadata: Metadata = {
@@ -35,38 +24,32 @@ export const metadata: Metadata = {
 
 export default function ExploringAttentionResidualsPage() {
   return (
-    <main
-      className={`attnres-shell min-h-screen bg-[#FAFAF9] text-stone-800 ${attnResSans.variable} ${attnResSerif.variable} ${attnResMono.variable}`}
-    >
-      <div className="mx-auto max-w-2xl px-6 pt-8">
-        <Link
-          href="/writing"
-          className="inline-flex items-center gap-2 text-sm text-amber-700 underline decoration-amber-300 underline-offset-4 transition-colors hover:text-amber-900 hover:decoration-amber-600"
+    <main className="attnres-shell min-h-screen bg-[#FAFAF9] text-stone-800 antialiased">
+      <div className="px-6 pt-8 md:px-8">
+        <a
+          href="/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${siteBrand.className} text-3xl font-bold text-red-900 transition-colors hover:text-red-950`}
         >
-          <span aria-hidden="true">←</span>
-          Back to blog
-        </Link>
+          evanlin.ca
+        </a>
       </div>
 
-      <header className="px-6 pb-12 pt-8">
+      <header className="px-6 pb-6 pt-8">
         <div className="mx-auto max-w-2xl">
-          <p className="mb-4 font-mono text-sm uppercase tracking-wide text-amber-700">
-            Research Notes
+          <p className="mb-6 font-mono text-sm uppercase tracking-wide text-red-900">
+            EXPLORATIONS - April 2026
           </p>
-          <h1 className="mb-6 font-serif text-4xl font-bold leading-[1.15] tracking-tight text-stone-900 sm:text-5xl">
+          <h1 className="mb-8 font-serif text-4xl font-bold leading-[1.15] tracking-tight text-stone-900 sm:text-5xl">
             What I Learned Building Attention Residuals from Scratch
           </h1>
-          <div className="mb-8 flex items-center gap-4 border-t border-stone-200 pt-8">
-            <div>
-              <p className="font-medium text-stone-900">Evan Lin</p>
-              <p className="text-sm text-stone-500">April 2025</p>
-            </div>
-          </div>
-          <p className="font-serif text-xl italic leading-relaxed text-stone-500">
-            Reimplementing a paper in 260 lines of PyTorch changed how I think
+          <p className="mb-10 font-serif text-xl italic leading-relaxed text-stone-500">
+            Naively reimplementing a paper in PyTorch changed how I think
             about how transformers route information, and about the gap between
             academic math and physical silicon.
           </p>
+          <div className="border-b border-stone-200" />
         </div>
       </header>
 
@@ -80,7 +63,13 @@ export default function ExploringAttentionResidualsPage() {
             preserved, what gets overwritten, and why.
           </p>
           <p>
-            <a href="https://www.youtube.com/watch?v=LSHTkbnmzy4">A video</a>{' '}
+            <a
+              href="https://www.youtube.com/watch?v=LSHTkbnmzy4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              A video
+            </a>{' '}
             helped build some of the initial intuition. From there I picked up
             the paper, <strong>Attention Residuals</strong>{' '}
             <em>(Kimi Team, 2026)</em>, and decided to reimplement it from
@@ -89,15 +78,77 @@ export default function ExploringAttentionResidualsPage() {
             dataset small enough that I could trace every matrix multiplication
             by hand.
           </p>
+          <figure className="my-10">
+            <Image
+              src="/attnres-lol-rotated.png"
+              alt="A rotated sketch snapshot from the attention residuals article work-in-progress"
+              width={2231}
+              height={1751}
+              className="w-full rounded-lg border border-stone-200"
+            />
+            <figcaption className="attnres-figure-caption">
+              This is a frozen snapshot of when things started to click for me.
+              I never finished the drawing, and my handwriting here might
+              honestly be worse than{' '}
+              <a
+                href="https://x.com/kennykgguo/status/2040111742840111253"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                kenny&apos;s
+              </a>
+              , but I like it as a raw artifact of the moment when the math
+              started to feel concrete :p
+            </figcaption>
+          </figure>
+          <p>
+            Right around here, I remember asking Gemini, &ldquo;make me a toy
+            problem that i can do by hand, faithful to the math in the
+            paper.&rdquo; I needed something small enough that I could trace
+            every tensor manually, but still honest to the actual routing
+            mechanism the paper was studying.
+          </p>
+          <p>
+            One thing that clicked for me from the video was that ordinary
+            attention, plus the KV cache, is basically a breadth-wise memory.
+            You keep appending keys and values along sequence length so the
+            model can revisit earlier positions in time. Attention Residuals
+            felt like that same instinct turned depth-wise. Instead of caching
+            over previous tokens, you are effectively caching over previous
+            layers and intermediate computations.
+          </p>
+          <p>
+            Later,{' '}
+            <a
+              href="https://xanderchin.xyz"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Xander
+            </a>{' '}
+            sent me{' '}
+            <a
+              href="https://x.com/kimi_moonshot/status/2037010118957817988?s=46"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              this Kimi tweet
+            </a>
+            , with two lines I loved: &ldquo;Rotating an LSTM gives us
+            residuals&rdquo; and &ldquo;What is attention rotated by 90
+            degrees?&rdquo; That framing made the whole thing feel especially
+            beautiful to me. It was old machinery getting turned on a new axis,
+            not discarded, just repurposed for a new problem.
+          </p>
           <p>
             The exercise turned out to be far more instructive than I expected.
-            Not because the paper is complex. The core idea fits in a
+            Not because the paper is complex. The core idea literally fits in a
             paragraph. But implementing it forced me to confront questions
             about memory management, gradient flow, and hardware constraints
             that never come up when you&apos;re working at the API level.
           </p>
           <p>
-            This post walks through the architecture, the code, and the
+            This post walks through the architecture, some code, and the
             specific moments where my understanding broke and reformed.
           </p>
 
@@ -383,6 +434,22 @@ self.mlp_input_norm = nn.RMSNorm(D)`}
             implementation details, the places where abstract math collides
             with physical hardware constraints.
           </p>
+          <p>
+            I also felt like I got to understand PyTorch a little better
+            through all of this. Part of why I even started the project was a
+            conversation{' '}
+            <a
+              href="https://www.suryasure.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Surya
+            </a>{' '}
+            had with Zachary Cetinic, which was the initial spark for all of this.
+            That made me want to give it a shot myself and hand-write most of
+            the machinery and repetitive plumbing, just to see if I could make
+            the abstractions feel concrete.
+          </p>
 
           <h3>
             <code>torch.stack</code> vs. <code>.append</code>
@@ -396,6 +463,13 @@ self.mlp_input_norm = nn.RMSNorm(D)`}
             enough to hold every entry, then physically copy all the data into
             it.
           </p>
+        </div>
+
+        <div className="mx-auto max-w-4xl">
+          <MemoryCoalescing />
+        </div>
+
+        <div className="attnres-blog-prose mx-auto max-w-2xl">
           <p>
             This means every layer pays the cost of two full stack operations.
             It felt wasteful at first. But there&apos;s no alternative.{' '}
@@ -513,6 +587,15 @@ self.mlp_input_norm = nn.RMSNorm(D)`}
             capacity-constrained, so routing efficiency matters more per
             parameter.
           </p>
+          <figure className="my-10">
+            <Image
+              src="/attnres-stats.png"
+              alt="Statistics comparison image from the original attention residuals article"
+              width={1310}
+              height={676}
+              className="w-full rounded-lg border border-stone-200"
+            />
+          </figure>
           <p>
             <strong>Gradient distribution is the big one.</strong> Figure 5(c)
             in the paper shows the baseline produces disproportionately large
@@ -556,21 +639,62 @@ self.mlp_input_norm = nn.RMSNorm(D)`}
             the plumbing&rdquo; is where engineering lives.
           </p>
           <p>
-            The full implementation is roughly 260 lines of PyTorch with a
+            The full implementation is comprised of hacky PyTorch plumbing with a
             bunch of stream-of-consciousness comments/notes that helped me
-            carefully comb through my thoughts but probably won&apos;t be
-            important to you :p If you want to trace the numbers yourself, the
-            code and training logs are in the repository.
+            carefully comb through my thoughts, but probably won&apos;t be
+            important to you.
+          </p>
+          <h2>Hindsight</h2>
+          <p>
+            If I kept pushing this further, the next things I&apos;d want to
+            try are:
+          </p>
+          <ul>
+            <li>Implement Block AttnRes.</li>
+            <li>Train it for more than 50 epochs lol.</li>
+            <li>Use a more modern optimizer.</li>
+            <li>
+              Replace the sinusoidal embeddings with RoPE. I skipped that this
+              time because I didn&apos;t really understand RoPE well enough yet
+              to feel good implementing it.
+            </li>
+            <li>
+              Switch from encoder layers to decoder layers and add a KV cache.
+            </li>
+          </ul>
+          <p>
+            And before anybody polices me about &ldquo;tHiS iSnT hOw yOu dO
+            rEsEaRcH,&rdquo; well, 1. I&apos;m not a researcher, 2. I know
+            very little about training, and 3. if you&apos;ve made it this far,
+            give me tips on how i could do better :)
           </p>
 
           <hr />
 
           <p className="mt-12 text-base text-stone-500">
             <em>
-              Built with PyTorch. The paper is{' '}
+              The paper is{' '}
               <strong>Attention Residuals</strong> <em>(Kimi Team, 2026)</em>,
-              arXiv:2603.15031.
+              <a
+                href="https://arxiv.org/abs/2603.15031"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {' '}
+                arXiv:2603.15031
+              </a>
+              .
             </em>
+          </p>
+          <p className="text-base text-stone-500">
+            Full code and training logs in the{' '}
+            <a
+              href="https://github.com/eevaain/toy-attention-residuals"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              repository
+            </a>
           </p>
         </div>
       </article>

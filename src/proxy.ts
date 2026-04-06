@@ -8,7 +8,7 @@ const legacyArticlePaths = new Set([
   '/reading/exploring attnres',
 ]);
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   if (legacyArticlePaths.has(request.nextUrl.pathname)) {
     const url = request.nextUrl.clone();
     url.pathname = '/writing/exploring-attnres';
