@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Spectral } from 'next/font/google';
 
 import AlphaGatePipeline from '@/components/exploringattnres/AlphaGatePipeline';
 import CodeBlock from '@/components/exploringattnres/CodeBlock';
@@ -9,32 +8,38 @@ import MemoryCoalescing from '@/components/exploringattnres/MemoryCoalescing';
 import ResidualComparison from '@/components/exploringattnres/ResidualComparison';
 import TrainingChart from '@/components/exploringattnres/TrainingChart';
 
-const siteBrand = Spectral({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-});
-
 export const metadata: Metadata = {
   title: 'Exploring Attention Residuals | Evan Lin',
   description:
-    'What I learned building attention residuals from scratch, ported into evanlin.ca as a full interactive article.',
+    'Naively reimplementing a paper in PyTorch changed how I think about how transformers route information, and about the gap between academic math and physical silicon.',
+  openGraph: {
+    title: 'What I Learned Building Attention Residuals from Scratch',
+    description:
+      'Naively reimplementing a paper in PyTorch changed how I think about how transformers route information, and about the gap between academic math and physical silicon.',
+    type: 'article',
+    url: '/writing/exploring-attnres',
+    images: [
+      {
+        url: '/attnrestumbnail.png',
+        width: 1789,
+        height: 959,
+        alt: 'Thumbnail for What I Learned Building Attention Residuals from Scratch.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'What I Learned Building Attention Residuals from Scratch',
+    description:
+      'Naively reimplementing a paper in PyTorch changed how I think about how transformers route information, and about the gap between academic math and physical silicon.',
+    images: ['/attnrestumbnail.png'],
+  },
 };
 
 export default function ExploringAttentionResidualsPage() {
   return (
-    <main className="attnres-shell min-h-screen bg-[#FAFAF9] text-stone-800 antialiased">
-      <div className="px-6 pt-8 md:px-8">
-        <a
-          href="/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`${siteBrand.className} text-3xl font-bold text-red-900 transition-colors hover:text-red-950`}
-        >
-          evanlin.ca
-        </a>
-      </div>
-
-      <header className="px-6 pb-6 pt-8">
+    <main className="attnres-shell text-stone-800 antialiased">
+      <header className="px-6 pb-6 pt-2 md:pt-10">
         <div className="mx-auto max-w-2xl">
           <p className="mb-6 font-mono text-sm uppercase tracking-wide text-red-900">
             EXPLORATIONS - April 2026

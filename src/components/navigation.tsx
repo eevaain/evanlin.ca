@@ -1,77 +1,67 @@
 import Link from "next/link";
-import Image from "next/image";
+import { Spectral } from "next/font/google";
+
+const siteBrand = Spectral({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 export default function Navigation() {
   return (
-    <div className="md:flex flex-col md:space-x-2 md:gap-4 md:p-8 p-8 bg-red-900 text-white items-center md:h-full">
-      <h2 className="text-3xl font-bold mb-2 ">evanlin.ca</h2>
-
-      <div className="flex md:flex-col md:gap-4 gap-2.5 h-full">
-        <Link href="/" className="hover:underline md:text-base text-sm">
-          about
+    <nav className="md:sticky md:top-8 self-start md:w-40 w-full">
+      <div className="flex flex-col gap-4 md:gap-5">
+        <Link
+          href="/"
+          className={`${siteBrand.className} text-3xl font-bold text-red-900 transition-colors hover:text-red-950`}
+        >
+          evanlin.ca
         </Link>
 
-        <Link href="/writing" className="hover:underline md:text-base text-sm">
-          blog!
-        </Link>
+        <div className="flex flex-wrap gap-x-4 gap-y-2 text-left md:flex-col md:items-start md:gap-2">
+          <Link href="/" className="text-base text-red-900 hover:underline">
+            about
+          </Link>
 
-        <Link href="/reading" className="hover:underline md:text-base text-sm">
-          links
-        </Link>
+          <Link
+            href="/writing"
+            className="text-base text-red-900 hover:underline"
+          >
+            blog!
+          </Link>
 
-        <a
-          href="https://github.com/eevaain"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:underline md:text-base text-sm"
-        >
-          github
-        </a>
+          <Link
+            href="/reading"
+            className="text-base text-red-900 hover:underline"
+          >
+            links
+          </Link>
 
-        <a
-          href="https://twitter.com/evanliin"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:underline md:text-base text-sm"
-        >
-          twitter
-        </a>
+          <a
+            href="https://github.com/eevaain"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-base text-red-900 hover:underline"
+          >
+            github
+          </a>
 
-        <a
-          href="https://twitter.com/evanliin"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:underline md:text-base text-sm"
-        >
-          contact
-        </a>
+          <a
+            href="https://twitter.com/evanliin"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-base text-red-900 hover:underline"
+          >
+            twitter
+          </a>
 
-        {/* <a
-          href="https://www.youtube.com/channel/UCn9Ir-KFtIWSntk6RzGE1-A"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:underline md:text-base text-sm"
-        >
-          Youtube
-        </a> */}
-
-        {/* maybe add a bytecode trail as an easter egg */}
-
-        {/* add some stuff here at the end of the navbar */}
+          <a
+            href="mailto:evanlin416@gmail.com"
+            className="text-base text-red-900 hover:underline"
+          >
+            contact
+          </a>
+        </div>
       </div>
-
-      {/* <p className="hidden md:block">;{")"}</p> */}
-      {/* <Image className="hidden md:block" src="/gmail-pixel-art.gif" alt="my gif" height={40} width={40} /> */}
-      <div className="hidden md:block">
-        <Image
-          className="cursor-pointer"
-          src="/pikachuslowed.gif"
-          alt="my gif"
-          height={60}
-          width={60}
-          loading="lazy"
-        />
-      </div>
-    </div>
+    </nav>
   );
 }

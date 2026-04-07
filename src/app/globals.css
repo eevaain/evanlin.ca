@@ -7,6 +7,10 @@
   font-family: 'Albert Sans', sans-serif;
 }
 
+.attnres-serif {
+  font-family: 'Source Serif 4', Georgia, serif;
+}
+
 .attnres-shell {
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-serif: 'Source Serif 4', Georgia, serif;
@@ -238,6 +242,15 @@
 
 .attnres-delay-1600 {
   animation-delay: 1600ms;
+}
+
+.home-scroll-shell {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.home-scroll-shell::-webkit-scrollbar {
+  display: none;
 }
 
 .attnres-delay-1700 {

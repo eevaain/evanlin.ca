@@ -1,8 +1,6 @@
 import Link from "next/link";
-import Navigation from "@/components/navigation";
 
 export default function Writing() {
-  // Function to parse dates for sorting
   const parseDate = (dateStr: string) => {
     const date = new Date(dateStr.replace(/(\d+)(st|nd|rd|th)/, "$1"));
     return date;
@@ -69,33 +67,30 @@ export default function Writing() {
   ].sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime());
 
   return (
-    <div className="flex md:h-full md:pt-12 pt-8 pb-8 md:w-full justify-center">
-      <div className="md:flex md:space-x-12 md:w-2/3 w-5/6 md:h-full">
-        <Navigation />
-        <div className="flex flex-col md:pt-4 pt-6 gap-2 overflow-auto px-4 md:px-0 md:pr-10">
-          <h2 className="text-xl md:text-2xl text-red-900">evan{"'"}s blog</h2>
+    <div className="mx-auto max-w-3xl pt-2 md:pt-10">
+      <div className="flex flex-col gap-2 md:pr-10">
+        <h2 className="text-xl text-red-900 md:text-2xl">evan{"'"}s blog</h2>
 
-          <div className="flex flex-col gap-4 pt-2 w-full md:h-full">
-            {allArticles.map((article, index) => (
-              <div key={index} className="">
-                {article.internal ? (
-                  <Link href={article.href} className="text-md hover:underline">
-                    {article.title}
-                  </Link>
-                ) : (
-                  <a
-                    href={article.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-md hover:underline"
-                  >
-                    {article.title}
-                  </a>
-                )}
-                <p className="text-gray-500 text-sm">{article.date}</p>
-              </div>
-            ))}
-          </div>
+        <div className="flex w-full flex-col gap-4 pt-2">
+          {allArticles.map((article, index) => (
+            <div key={index}>
+              {article.internal ? (
+                <Link href={article.href} className="text-md hover:underline">
+                  {article.title}
+                </Link>
+              ) : (
+                <a
+                  href={article.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-md hover:underline"
+                >
+                  {article.title}
+                </a>
+              )}
+              <p className="text-sm text-gray-500">{article.date}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

@@ -1,9 +1,4 @@
-import Navigation from "@/components/navigation";
-
-export default function Writing() {
-  // if i remember correctly there should be a way for me to reuse the prev evanlin.ca, home and writing divs without rerender
-  // preventing remount? is that the right term? kkjkj
-
+export default function Reading() {
   const articles = [
     {
       title: "Sensitivity Is Strength!",
@@ -48,27 +43,24 @@ export default function Writing() {
   ];
 
   return (
-    <div className="flex md:h-full md:pt-12 pt-8 pb-8 md:w-full justify-center ">
-      <div className="md:flex md:space-x-12 md:w-2/3 w-5/6 md:h-full ">
-        <Navigation />
-        <div className="flex flex-col pt-4 gap-3.5 md:h-full px-4 md:px-0">
-          <h2 className="text-xl md:text-2xl text-red-900">favourite reads</h2>
+    <div className="mx-auto max-w-3xl pt-2 md:pt-10">
+      <div className="flex flex-col gap-3.5 md:pr-10">
+        <h2 className="text-xl text-red-900 md:text-2xl">favourite reads</h2>
 
-          <div className="flex flex-col gap-4 w-full md:h-full">
-            {articles.map((article, index) => (
-              <div key={index}>
-                <a
-                  href={article.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline text-md"
-                >
-                  {article.title}
-                </a>
-                <p className="text-slate-600 text-sm">{article.author}</p>
-              </div>
-            ))}
-          </div>
+        <div className="flex w-full flex-col gap-4">
+          {articles.map((article, index) => (
+            <div key={index}>
+              <a
+                href={article.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-md hover:underline"
+              >
+                {article.title}
+              </a>
+              <p className="text-sm text-slate-600">{article.author}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
