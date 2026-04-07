@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
-
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Spectral } from 'next/font/google';
@@ -213,6 +211,15 @@ return self.final_proj(states[-1])`}
             grows by two entries per layer, one from the multi-head attention
             block, one from the MLP.
           </p>
+          <p>
+            One dumb thing I thought should work at first was{' '}
+            <code>states.append(layer(states))</code>. It sounds natural when
+            you say it fast. But <code>layer(states)</code> already mutates and
+            returns the same list object, so that line would make{' '}
+            <code>states</code> append itself into itself. Layer 2&apos;s{' '}
+            <code>torch.stack()</code> would then immediately walk into a
+            cursed self-referential list and explode.
+          </p>
         </div>
 
         <div className="mx-auto max-w-4xl">
@@ -310,6 +317,16 @@ return self.final_proj(states[-1])`}
             always be zero, and it will never learn anything. It exists in the
             code purely for structural symmetry.
           </p>
+          <p>
+            I only understood this after making a very silly mistake on paper.
+            I had written down the alpha gate from embedding to MHA 1 as
+            something like <code>[1, 1]</code>, because in my head I was
+            already counting both the embedding and MHA 1. But MHA 1
+            hasn&apos;t run yet when it queries the database. There is only
+            one thing to attend to. That was the moment it clicked that the
+            first query vector isn&apos;t just unimportant, it is
+            mathematically useless.
+          </p>
 
           <h2>The dual-norm system</h2>
           <p>
@@ -378,6 +395,15 @@ self.mlp_input_norm = nn.RMSNorm(D)`}
             to <code>einsum</code>. This is expensive, but necessary. GPU
             tensor cores cannot operate on a Python list of pointers. They need
             a single, aligned memory block.
+          </p>
+          <p>
+            I also had a moment where the two variable names, <code>V</code>{' '}
+            and <code>V_updated</code>, felt hella memory inefficient. Like,
+            wait, did I just double memory by naming the thing twice? But the
+            names are free. They&apos;re just sticky notes attached to GPU
+            allocations. The real memory cost is the new <code>torch.stack()</code>{' '}
+            call itself, which allocates fresh contiguous storage no matter
+            what you name the result.
           </p>
 
           <hr />
@@ -477,6 +503,12 @@ self.mlp_input_norm = nn.RMSNorm(D)`}
             aligned memory. You cannot run a matrix multiplication on a Python
             list of scattered pointers. The cost is the price of parallelism.
           </p>
+          <p>
+            I originally thought maybe skipping <code>torch.stack()</code>{' '}
+            would just make <code>einsum</code> slower. It wouldn&apos;t be
+            slower. It would just crash. <code>einsum</code> has no idea what a
+            Python list even is. It wants contiguous tensor memory or nothing.
+          </p>
 
           <h3>Pass-by-reference saves you</h3>
           <p>
@@ -521,6 +553,25 @@ self.mlp_input_norm = nn.RMSNorm(D)`}
             in HBM. It trades slightly more compute for vastly less memory I/O,
             because on modern GPUs, computing a number twice is often faster
             than memorizing it once.
+          </p>
+          <p>
+            Another thing I got weirdly stuck on for a while was softmax. I
+            kept thinking, okay, other words live across the columns, so how
+            are rows somehow independent? The unlock was realizing that walking
+            across one row <em>is</em> scanning the columns. That was the thing
+            that finally made attention feel embarrassingly parallel to me, and
+            that is basically the whole intuition underneath why FlashAttention
+            works at all.
+          </p>
+          <p>
+            I also briefly made the classic bad leap of, &ldquo;oh, if each row
+            is parallelizable then attention is O(N).&rdquo; Not true. The
+            total work is still O(N²). Parallelism only changes how much of
+            that work you can hide across cores, not the exponent. I think
+            part of why I got mixed up is that I already had this fuzzy fact
+            in my head that some attention memory stories grow like O(N) while
+            compute grows like O(N²), and I probably blurred that together
+            with the parallelism story along the way.
           </p>
 
           <h2>How my toy results compare with the paper</h2>
@@ -597,7 +648,7 @@ self.mlp_input_norm = nn.RMSNorm(D)`}
             />
           </figure>
           <p>
-            <strong>Gradient distribution is the big one.</strong> Figure 5(c)
+            <strong>Gradient distribution is the big one. </strong> Figure 5(c)
             in the paper shows the baseline produces disproportionately large
             gradients in early layers with no mechanism to regulate flow across
             depth. AttnRes yields a substantially more uniform gradient
