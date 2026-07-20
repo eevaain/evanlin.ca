@@ -172,6 +172,15 @@ export default function CustodyBattleWithTheMachinePage() {
               </Fragment>
             );
           })}
+          <figure className="mt-16">
+            <Image
+              src="/custody-battle-signature.png"
+              alt="Evan Lin's signature"
+              width={818}
+              height={198}
+              className="h-auto w-44"
+            />
+          </figure>
         </div>
       </article>
     </main>
