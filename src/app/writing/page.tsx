@@ -8,6 +8,12 @@ export default function Writing() {
 
   const allArticles = [
     {
+      title: "Custody battle with the machine.",
+      href: "/writing/custody-battle-with-the-machine",
+      date: "July 19th, 2026",
+      internal: true,
+    },
+    {
       title: "What I Learned Building Attention Residuals from Scratch",
       href: "/writing/exploring-attnres",
       date: "April 2026",
