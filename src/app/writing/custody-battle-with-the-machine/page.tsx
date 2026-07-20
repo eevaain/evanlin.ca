@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     publishedTime: "2026-07-19T00:00:00-04:00",
     images: [
       {
-        url: "/custody-battle-with-the-machine.png",
-        width: 1731,
-        height: 909,
-        alt: "Custody battle with the machine. — an essay by Evan Lin",
+        url: "/custody-battle-thumbnail.png",
+        width: 1459,
+        height: 1099,
+        alt: "A preview of Evan Lin's Custody battle with the machine. essay",
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Custody battle with the machine.",
     description: articleDescription,
-    images: ["/custody-battle-with-the-machine.png"],
+    images: ["/custody-battle-thumbnail.png"],
   },
 };
 
