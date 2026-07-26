@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   compress: true,
+  poweredByHeader: false,
+  experimental: {
+    inlineCss: true,
+  },
   turbopack: {
     root: __dirname,
   },

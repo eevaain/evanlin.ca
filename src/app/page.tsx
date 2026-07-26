@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="home-scroll-shell mx-auto max-w-3xl pt-2 md:max-h-[calc(100dvh-6rem)] md:overflow-y-auto md:pr-2 md:pt-8">
       <div className="flex flex-col gap-2 md:pr-10">
-        <h2 className="attnres-serif pb-2 text-xl tracking-tight text-red-900 md:text-2xl">
+        <h2 className="pb-2 text-xl tracking-tight text-red-900 md:text-2xl">
           about me
         </h2>
         <p>Hi! I{"'"}m Evan.</p>
@@ -30,14 +32,9 @@ export default function Home() {
             Twitter,
           </a>{" "}
           or more recently my{" "}
-          <a
-            href="https://evanlin.ca/writing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-red-800"
-          >
+          <Link href="/writing" prefetch={false} className="text-red-800">
             writing
-          </a>
+          </Link>
           .
         </p>
 
@@ -92,18 +89,6 @@ export default function Home() {
         </p>
         <p>This one is still a work in progress...</p>
         <p>But in the meantime, maybe we should talk! :{")"}</p>
-
-        <div className="mb-8 flex flex-row items-baseline space-x-3 pt-4">
-          <a
-            href="https://calendly.com/eevaain/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded bg-red-900 px-4 py-2 font-semibold text-white hover:bg-red-950 focus:outline-none focus:shadow-outline"
-          >
-            Say hi!
-          </a>
-          <p>{"*I dare you*"}</p>
-        </div>
       </div>
     </div>
   );

@@ -1,6 +1,9 @@
-'use client';
-
-import { Highlight, themes, type PrismTheme } from 'prism-react-renderer';
+import {
+  normalizeTokens,
+  Prism,
+  themes,
+  type PrismTheme,
+} from 'prism-react-renderer';
 
 const vsCodeTheme: PrismTheme = {
   ...themes.vsDark,
@@ -24,22 +27,42 @@ export default function CodeBlock({
   code,
   language = 'python',
 }: CodeBlockProps) {
+  const normalizedLanguage = language.toLowerCase();
+  const grammar =
+    Prism.languages[normalizedLanguage] ?? Prism.languages.plain;
+  const lines = normalizeTokens(
+    Prism.tokenize(code.trim(), grammar),
+  );
+
+  const tokenStyles = (types: string[]) =>
+    types.reduce<React.CSSProperties>((style, type) => {
+      for (const entry of vsCodeTheme.styles) {
+        if (
+          entry.types.includes(type) &&
+          (!entry.languages ||
+            entry.languages.includes(normalizedLanguage))
+        ) {
+          Object.assign(style, entry.style);
+        }
+      }
+
+      return style;
+    }, {});
+
   return (
-    <Highlight theme={vsCodeTheme} code={code.trim()} language={language}>
-      {({ style, tokens, getLineProps, getTokenProps }) => (
-        <pre
-          className="my-8 overflow-x-auto rounded-lg p-5 font-mono text-sm leading-relaxed"
-          style={{ ...style }}
-        >
-          {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line })}>
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token })} />
-              ))}
-            </div>
+    <pre
+      className="my-8 overflow-x-auto rounded-lg p-5 font-mono text-sm leading-relaxed"
+      style={vsCodeTheme.plain}
+    >
+      {lines.map((line, lineIndex) => (
+        <div key={lineIndex}>
+          {line.map((token, tokenIndex) => (
+            <span key={tokenIndex} style={tokenStyles(token.types)}>
+              {token.content}
+            </span>
           ))}
-        </pre>
-      )}
-    </Highlight>
+        </div>
+      ))}
+    </pre>
   );
 }

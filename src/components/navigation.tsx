@@ -1,10 +1,4 @@
 import Link from "next/link";
-import { Spectral } from "next/font/google";
-
-const siteBrand = Spectral({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
 
 export default function Navigation() {
   return (
@@ -12,18 +6,24 @@ export default function Navigation() {
       <div className="flex flex-col gap-4 md:gap-5">
         <Link
           href="/"
-          className={`${siteBrand.className} text-3xl font-bold text-red-900 transition-colors hover:text-red-950`}
+          prefetch={false}
+          className="text-3xl font-bold text-red-900 transition-colors hover:text-red-950"
         >
           evanlin.ca
         </Link>
 
         <div className="flex flex-wrap gap-x-4 gap-y-2 text-left md:flex-col md:items-start md:gap-2">
-          <Link href="/" className="text-base text-red-900 hover:underline">
+          <Link
+            href="/"
+            prefetch={false}
+            className="text-base text-red-900 hover:underline"
+          >
             about
           </Link>
 
           <Link
             href="/writing"
+            prefetch={false}
             className="text-base text-red-900 hover:underline"
           >
             blog!
@@ -31,6 +31,7 @@ export default function Navigation() {
 
           <Link
             href="/reading"
+            prefetch={false}
             className="text-base text-red-900 hover:underline"
           >
             links

@@ -1,12 +1,9 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import '../article.css';
 
-import AlphaGatePipeline from '@/components/exploringattnres/AlphaGatePipeline';
 import CodeBlock from '@/components/exploringattnres/CodeBlock';
-import DatabaseGrowth from '@/components/exploringattnres/DatabaseGrowth';
-import MemoryCoalescing from '@/components/exploringattnres/MemoryCoalescing';
-import ResidualComparison from '@/components/exploringattnres/ResidualComparison';
-import TrainingChart from '@/components/exploringattnres/TrainingChart';
+import LazyVisualization from '@/components/exploringattnres/LazyVisualization';
 
 export const metadata: Metadata = {
   title: 'Exploring Attention Residuals | Evan Lin',
@@ -87,6 +84,7 @@ export default function ExploringAttentionResidualsPage() {
               alt="A rotated sketch snapshot from the attention residuals article work-in-progress"
               width={2231}
               height={1751}
+              sizes="(max-width: 767px) calc(100vw - 6rem), 672px"
               className="w-full rounded-lg border border-stone-200"
             />
             <figcaption className="attnres-figure-caption">
@@ -190,7 +188,7 @@ export default function ExploringAttentionResidualsPage() {
         </div>
 
         <div className="mx-auto max-w-4xl">
-          <ResidualComparison />
+          <LazyVisualization name="residualComparison" />
         </div>
 
         <div className="attnres-blog-prose mx-auto max-w-2xl">
@@ -228,7 +226,7 @@ return self.final_proj(states[-1])`}
         </div>
 
         <div className="mx-auto max-w-4xl">
-          <DatabaseGrowth />
+          <LazyVisualization name="databaseGrowth" />
         </div>
 
         <div className="attnres-blog-prose mx-auto max-w-2xl">
@@ -278,7 +276,7 @@ return self.final_proj(states[-1])`}
         </div>
 
         <div className="mx-auto max-w-4xl">
-          <AlphaGatePipeline />
+          <LazyVisualization name="alphaGatePipeline" />
         </div>
 
         <div className="attnres-blog-prose mx-auto max-w-2xl">
@@ -430,7 +428,7 @@ self.mlp_input_norm = nn.RMSNorm(D)`}
         </div>
 
         <div className="mx-auto max-w-4xl">
-          <TrainingChart />
+          <LazyVisualization name="trainingChart" />
         </div>
 
         <div className="attnres-blog-prose mx-auto max-w-2xl">
@@ -497,7 +495,7 @@ self.mlp_input_norm = nn.RMSNorm(D)`}
         </div>
 
         <div className="mx-auto max-w-4xl">
-          <MemoryCoalescing />
+          <LazyVisualization name="memoryCoalescing" />
         </div>
 
         <div className="attnres-blog-prose mx-auto max-w-2xl">
@@ -649,6 +647,7 @@ self.mlp_input_norm = nn.RMSNorm(D)`}
               alt="Statistics comparison image from the original attention residuals article"
               width={1310}
               height={676}
+              sizes="(max-width: 767px) calc(100vw - 6rem), 672px"
               className="w-full rounded-lg border border-stone-200"
             />
           </figure>

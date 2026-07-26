@@ -8,16 +8,21 @@ export default function Writing() {
 
   const allArticles = [
     {
-      title: "Custody battle with the machine.",
+      title: "custody battle with the machine",
       href: "/writing/custody-battle-with-the-machine",
       date: "July 19th, 2026",
       internal: true,
     },
     {
-      title: "What I Learned Building Attention Residuals from Scratch",
+      title: "what i learned building attention residuals from scratch",
       href: "/writing/exploring-attnres",
       date: "April 2026",
       internal: true,
+    },
+    {
+      title: "tinytpu.com",
+      href: "https://tinytpu.com",
+      date: "Aug 17th, 2025",
     },
     {
       title: "studio ghibli relationships",
@@ -81,7 +86,11 @@ export default function Writing() {
           {allArticles.map((article, index) => (
             <div key={index}>
               {article.internal ? (
-                <Link href={article.href} className="text-md hover:underline">
+                <Link
+                  href={article.href}
+                  prefetch={false}
+                  className="text-md hover:underline"
+                >
                   {article.title}
                 </Link>
               ) : (

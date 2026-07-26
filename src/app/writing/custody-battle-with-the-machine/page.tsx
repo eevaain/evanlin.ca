@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Fragment } from "react";
+import "../article.css";
 
 const articleDescription =
   "Codex (wife) took custody of the kids (dreams and whimsy) and now i am in a social club at 1:30 am confronting my thoughts under the influence of tequila.";
 
 export const metadata: Metadata = {
-  title: "Custody battle with the machine. | Evan Lin",
+  title: "Custody battle with the machine | Evan Lin",
   description: articleDescription,
   openGraph: {
-    title: "Custody battle with the machine.",
+    title: "Custody battle with the machine",
     description: articleDescription,
     type: "article",
     url: "/writing/custody-battle-with-the-machine",
@@ -19,13 +20,13 @@ export const metadata: Metadata = {
         url: "/custody-battle-thumbnail.png",
         width: 1459,
         height: 1099,
-        alt: "A preview of Evan Lin's Custody battle with the machine. essay",
+        alt: "A preview of Evan Lin's Custody battle with the machine essay",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custody battle with the machine.",
+    title: "Custody battle with the machine",
     description: articleDescription,
     images: ["/custody-battle-thumbnail.png"],
   },
@@ -138,7 +139,7 @@ export default function CustodyBattleWithTheMachinePage() {
             July 19th, 2026
           </p>
           <h1 className="mb-8 font-serif text-4xl font-bold leading-[1.15] tracking-tight text-stone-900 sm:text-5xl">
-            Custody battle with the machine.
+            Custody battle with the machine
           </h1>
           <p className="mb-10 font-serif text-xl italic leading-relaxed text-stone-500">
             {articleDescription}
@@ -162,6 +163,7 @@ export default function CustodyBattleWithTheMachinePage() {
                       alt={figure.alt}
                       width={figure.width}
                       height={figure.height}
+                      sizes="(max-width: 767px) calc(100vw - 6rem), 672px"
                       className="h-auto w-full rounded-lg border border-stone-200"
                     />
                     <figcaption className="attnres-figure-caption">
@@ -178,6 +180,7 @@ export default function CustodyBattleWithTheMachinePage() {
               alt="Evan Lin's signature"
               width={818}
               height={198}
+              sizes="176px"
               className="h-auto w-44"
             />
           </figure>
