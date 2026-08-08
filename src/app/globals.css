@@ -9,3 +9,95 @@
 .home-scroll-shell::-webkit-scrollbar {
   display: none;
 }
+
+.shiny-open {
+  display: inline;
+  appearance: none;
+  margin: 0;
+  border: 0;
+  padding: 0 0.08em;
+  background: linear-gradient(
+    110deg,
+    var(--color-red-900, #7f1d1d) 0%,
+    var(--color-red-900, #7f1d1d) 38%,
+    #ef4444 46%,
+    #fff1f2 50%,
+    #ef4444 54%,
+    var(--color-red-900, #7f1d1d) 62%,
+    var(--color-red-900, #7f1d1d) 100%
+  );
+  background-position: 100% 50%;
+  background-size: 260% 100%;
+  background-clip: text;
+  color: var(--color-red-900, #7f1d1d);
+  font: inherit;
+  font-style: italic;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: color-mix(
+    in srgb,
+    var(--color-red-900, #7f1d1d) 48%,
+    transparent
+  );
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+  animation: red-text-shine 2.6s ease-in-out infinite;
+  transition: filter 180ms ease, text-shadow 180ms ease;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shiny-open:hover {
+  filter: saturate(1.15);
+  text-shadow: 0 0 10px rgba(127, 29, 29, 0.2);
+}
+
+.shiny-open:focus-visible {
+  border-radius: 0.12em;
+  outline: 2px solid var(--color-red-900, #7f1d1d);
+  outline-offset: 3px;
+}
+
+@keyframes red-text-shine {
+  0%,
+  54% {
+    background-position: 100% 50%;
+  }
+
+  78%,
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.home-reveal {
+  animation: home-content-reveal 1100ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes home-content-reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shiny-open {
+    animation: none;
+    transition: none;
+    -webkit-text-fill-color: var(--color-red-900, #7f1d1d);
+  }
+
+  .home-reveal {
+    animation: none;
+  }
+}
