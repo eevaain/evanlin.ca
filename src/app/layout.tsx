@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/navigation";
+import RandomAccent from "@/components/random-accent";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.evanlin.ca"),
@@ -34,7 +35,8 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://twitter.com" />
         <link rel="dns-prefetch" href="https://github.com" />
       </head>
-      <body className="h-full bg-[#FAFAF9] font-serif text-stone-800">
+      <body className="site-body h-full bg-[#FAFAF9] text-stone-800">
+        <RandomAccent />
         <div className="min-h-screen px-6 pb-12 pt-8 md:px-8 md:pt-10">
           <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 md:flex-row md:gap-16">
             <Navigation />

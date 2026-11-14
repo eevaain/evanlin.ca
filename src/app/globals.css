@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @config "../../tailwind.config.js";
 
+.site-body {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
 .home-scroll-shell {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -20,9 +24,9 @@
     110deg,
     var(--color-red-900, #7f1d1d) 0%,
     var(--color-red-900, #7f1d1d) 38%,
-    #ef4444 46%,
-    #fff1f2 50%,
-    #ef4444 54%,
+    color-mix(in srgb, var(--color-red-900, #7f1d1d), white 45%) 46%,
+    color-mix(in srgb, var(--color-red-900, #7f1d1d), white 90%) 50%,
+    color-mix(in srgb, var(--color-red-900, #7f1d1d), white 45%) 54%,
     var(--color-red-900, #7f1d1d) 62%,
     var(--color-red-900, #7f1d1d) 100%
   );
@@ -49,7 +53,7 @@
 
 .shiny-open:hover {
   filter: saturate(1.15);
-  text-shadow: 0 0 10px rgba(127, 29, 29, 0.2);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--color-red-900, #7f1d1d), transparent 80%);
 }
 
 .shiny-open:focus-visible {

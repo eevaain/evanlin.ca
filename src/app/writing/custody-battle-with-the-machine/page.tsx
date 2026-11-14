@@ -138,10 +138,10 @@ export default function CustodyBattleWithTheMachinePage() {
           <p className="mb-6 font-mono text-sm uppercase tracking-wide text-red-900">
             July 19th, 2026
           </p>
-          <h1 className="mb-8 font-serif text-4xl font-bold leading-[1.15] tracking-tight text-stone-900 sm:text-5xl">
+          <h1 className="mb-8 text-4xl font-bold leading-[1.15] tracking-tight text-stone-900 sm:text-5xl">
             Custody battle with the machine
           </h1>
-          <p className="mb-10 font-serif text-xl italic leading-relaxed text-stone-500">
+          <p className="mb-10 text-xl italic leading-relaxed text-stone-500">
             {articleDescription}
           </p>
           <div className="border-b border-stone-200" />

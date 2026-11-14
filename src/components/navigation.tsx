@@ -7,7 +7,7 @@ export default function Navigation() {
         <Link
           href="/"
           prefetch={false}
-          className="text-3xl font-bold text-red-900 transition-colors hover:text-red-950"
+          className="font-serif text-3xl font-bold text-red-900 transition-colors hover:text-red-950"
         >
           evanlin.ca
         </Link>
@@ -18,15 +18,15 @@ export default function Navigation() {
             prefetch={false}
             className="text-base text-red-900 hover:underline"
           >
-            about
+            blog!
           </Link>
 
           <Link
-            href="/writing"
+            href="/about"
             prefetch={false}
             className="text-base text-red-900 hover:underline"
           >
-            blog!
+            about
           </Link>
 
           <Link

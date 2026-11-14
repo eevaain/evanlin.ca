@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Writing() {
   const parseDate = (dateStr: string) => {
@@ -99,7 +100,30 @@ export default function Writing() {
   return (
     <div className="mx-auto max-w-3xl pt-2 md:pt-10">
       <div className="flex flex-col gap-2 md:pr-10">
-        <h2 className="text-xl text-red-900 md:text-2xl">evan{"'"}s blog</h2>
+        <div className="grid w-full max-w-[656px] grid-cols-2 items-start gap-4">
+          <Image
+            src="/blog-candles.webp"
+            alt="Colorful candles with the words: but what if it all works out?"
+            width={960}
+            height={773}
+            sizes="(max-width: 704px) calc((100vw - 64px) / 2), 320px"
+            className="h-auto w-full"
+            loading="eager"
+            fetchPriority="high"
+          />
+          <Image
+            src="/blog-keep-going.webp"
+            alt="A bird asks what to do now; a gecko replies: I think you just keep going. The bird says: oh god."
+            width={960}
+            height={588}
+            sizes="(max-width: 704px) calc((100vw - 64px) / 2), 320px"
+            className="h-auto w-full"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </div>
+
+        <h2 className="mt-4 text-xl text-red-900 md:text-2xl">evan{"'"}s blog</h2>
 
         <div className="flex w-full flex-col gap-4 pt-2">
           {allArticles.map((article, index) => (
@@ -108,7 +132,7 @@ export default function Writing() {
                 <Link
                   href={article.href}
                   prefetch={false}
-                  className="text-md hover:underline"
+                  className="text-base hover:underline"
                 >
                   {article.title}
                 </Link>
@@ -117,13 +141,13 @@ export default function Writing() {
                   href={article.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-md hover:underline"
+                  className="text-base hover:underline"
                 >
                   {article.title}
                 </a>
               )}
               <p className="text-sm text-gray-500">{article.date}</p>
-              <p className="mt-1 text-sm text-gray-600">
+              <p className="mt-1 text-base text-gray-600">
                 {Array.from(article.excerpt).slice(0, 100).join("").trimEnd()}…
               </p>
             </div>

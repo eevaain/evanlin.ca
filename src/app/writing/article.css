@@ -2,16 +2,11 @@
 
 .attnres-shell {
   --font-sans: 'Inter', system-ui, sans-serif;
-  --font-serif: 'Source Serif 4', Georgia, serif;
   --font-mono: 'JetBrains Mono', Menlo, monospace;
   font-family: 'Inter', system-ui, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.attnres-shell .font-serif {
-  font-family: var(--font-serif);
 }
 
 .attnres-shell .font-mono {
@@ -27,11 +22,11 @@
 }
 
 .attnres-blog-prose h2 {
-  @apply mb-6 mt-16 font-serif text-3xl font-semibold tracking-tight text-stone-900;
+  @apply mb-6 mt-16 text-3xl font-semibold tracking-tight text-stone-900;
 }
 
 .attnres-blog-prose h3 {
-  @apply mb-4 mt-10 font-serif text-xl font-semibold text-stone-900;
+  @apply mb-4 mt-10 text-xl font-semibold text-stone-900;
 }
 
 .attnres-blog-prose a {
