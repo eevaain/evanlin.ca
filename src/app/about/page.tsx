@@ -68,7 +68,7 @@ export default function About() {
             </p>
             <ul className="list-inside list-disc space-y-0.75 text-base">
               <li>
-                Studying ECE in my fourth year at the University of Western
+                Studying electrical engineering in my fourth year at the University of Western
                 Ontario and <s>skipping many classes</s>
               </li>
               <li>
