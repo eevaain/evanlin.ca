@@ -57,7 +57,7 @@ export default function About() {
                 Twitter,
               </a>{" "}
               or more recently my{" "}
-              <Link href="/" prefetch={false} className="text-red-800">
+              <Link href="/" className="text-red-800">
                 writing
               </Link>
               .

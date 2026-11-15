@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import BlogPhotos from "@/components/blog-photos";
 
 export default function Writing() {
   const parseDate = (dateStr: string) => {
@@ -100,28 +100,7 @@ export default function Writing() {
   return (
     <div className="mx-auto max-w-3xl pt-2 md:pt-10">
       <div className="flex flex-col gap-2 md:pr-10">
-        <div className="grid w-full max-w-[656px] grid-cols-2 items-start gap-4">
-          <Image
-            src="/blog-candles.webp"
-            alt="Colorful candles with the words: but what if it all works out?"
-            width={960}
-            height={773}
-            sizes="(max-width: 704px) calc((100vw - 64px) / 2), 320px"
-            className="h-auto w-full"
-            loading="eager"
-            fetchPriority="high"
-          />
-          <Image
-            src="/blog-keep-going.webp"
-            alt="A bird asks what to do now; a gecko replies: I think you just keep going. The bird says: oh god."
-            width={960}
-            height={588}
-            sizes="(max-width: 704px) calc((100vw - 64px) / 2), 320px"
-            className="h-auto w-full"
-            loading="eager"
-            fetchPriority="high"
-          />
-        </div>
+        <BlogPhotos />
 
         <h2 className="mt-4 text-xl text-red-900 md:text-2xl">evan{"'"}s blog</h2>
 
@@ -131,7 +110,6 @@ export default function Writing() {
               {article.internal ? (
                 <Link
                   href={article.href}
-                  prefetch={false}
                   className="text-base hover:underline"
                 >
                   {article.title}

@@ -1,6 +1,16 @@
 @import "tailwindcss";
 @config "../../tailwind.config.js";
 
+html {
+  scrollbar-gutter: stable;
+}
+
+@supports not (scrollbar-gutter: stable) {
+  html {
+    overflow-y: scroll;
+  }
+}
+
 .site-body {
   font-family: 'Inter', system-ui, sans-serif;
 }

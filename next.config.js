@@ -12,11 +12,20 @@ const nextConfig = {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [],
   },
+  async redirects() {
+    return ["writing", "reading"].flatMap((section) =>
+      ["exploring%20attnres", "exploring attnres"].map((slug) => ({
+        source: `/${section}/${slug}`,
+        destination: "/writing/exploring-attnres",
+        permanent: false,
+      })),
+    );
+  },
   // Custom headers for caching static assets and images served from /public
   async headers() {
     return [
       {
-        source: "/:all*.(png|jpg|jpeg|gif|webp|svg)",
+        source: "/:all*.(png|jpg|jpeg|gif|webp|avif|svg)",
         headers: [
           {
             key: "Cache-Control",

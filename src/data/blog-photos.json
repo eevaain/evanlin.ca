@@ -1,0 +1,20 @@
+[
+  {
+    "name": "candles",
+    "alt": "Colorful candles with the words: but what if it all works out?",
+    "width": 960,
+    "height": 773,
+    "src": "/blog-photos/candles-640-23569ca270.webp",
+    "avifSrcSet": "/blog-photos/candles-320-90237284e0.avif 320w, /blog-photos/candles-640-9316131468.avif 640w, /blog-photos/candles-960-cbb2b374cc.avif 960w",
+    "webpSrcSet": "/blog-photos/candles-320-aaa45b4786.webp 320w, /blog-photos/candles-640-23569ca270.webp 640w, /blog-photos/candles-960-b24b61f1f9.webp 960w"
+  },
+  {
+    "name": "keep-going",
+    "alt": "A bird asks what to do now; a gecko replies: I think you just keep going. The bird says: oh god.",
+    "width": 960,
+    "height": 588,
+    "src": "/blog-photos/keep-going-640-4661482021.webp",
+    "avifSrcSet": "/blog-photos/keep-going-320-ebed7985ff.avif 320w, /blog-photos/keep-going-640-11bab80d47.avif 640w, /blog-photos/keep-going-960-79f72e7fa6.avif 960w",
+    "webpSrcSet": "/blog-photos/keep-going-320-7deab6bed6.webp 320w, /blog-photos/keep-going-640-4661482021.webp 640w, /blog-photos/keep-going-960-4b16b65fb5.webp 960w"
+  }
+]

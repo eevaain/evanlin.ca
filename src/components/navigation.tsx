@@ -6,7 +6,6 @@ export default function Navigation() {
       <div className="flex flex-col gap-4 md:gap-5">
         <Link
           href="/"
-          prefetch={false}
           className="font-serif text-3xl font-bold text-red-900 transition-colors hover:text-red-950"
         >
           evanlin.ca
@@ -15,7 +14,6 @@ export default function Navigation() {
         <div className="flex flex-wrap gap-x-4 gap-y-2 text-left md:flex-col md:items-start md:gap-2">
           <Link
             href="/"
-            prefetch={false}
             className="text-base text-red-900 hover:underline"
           >
             blog!
@@ -23,7 +21,6 @@ export default function Navigation() {
 
           <Link
             href="/about"
-            prefetch={false}
             className="text-base text-red-900 hover:underline"
           >
             about
@@ -31,7 +28,6 @@ export default function Navigation() {
 
           <Link
             href="/reading"
-            prefetch={false}
             className="text-base text-red-900 hover:underline"
           >
             links
